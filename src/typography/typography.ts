@@ -1,4 +1,4 @@
-import { Colors } from "./colors";
+import { colors } from "./colors";
 
 export const constants = {
   font: {
@@ -11,34 +11,19 @@ export const constants = {
       large: "60px",
     },
     size: {
-      xxxxLarge: {
-        option1: "40px",
-        option2: "60px",
-      },
-      xxxLarge: {
-        option1: "36px",
-        option2: "54px",
-      },
-      xxLarge: {
-        option1: "28px",
-        option2: "42px",
-      },
-      xLarge: {
-        option1: "18px",
-        option2: "27px",
-      },
-      large: {
-        option1: "16px",
-        option2: "24px",
-      },
-      medium: {
-        option1: "14px",
-        option2: "21px",
-      },
-      small: {
-        option1: "12px",
-        option2: "18px",
-      },
+      xxxxLarge: "40px",
+
+      xxxLarge: "36px",
+
+      xxLarge: "28px",
+
+      xLarge: "18px",
+
+      large: "16px",
+
+      medium: "14px",
+
+      small: "12px",
     },
     weight: {
       extraBold: 800,
@@ -58,142 +43,142 @@ export const typography = {
   display: {
     fontFamily: constants.font.family.primary,
     fontWeight: constants.font.weight.bold,
-    fontSize: constants.font.size.xxxxLarge.option1,
+    fontSize: constants.font.size.xxxxLarge,
     lineHeight: constants.font.lineHeight.large,
-    color: Colors.PrimaryDark,
+    color: colors.PrimaryDark,
   },
   H1: {
     fontFamily: constants.font.family.primary,
     fontWeight: constants.font.weight.bold,
-    fontSize: constants.font.size.xxxLarge.option2,
+    fontSize: constants.font.size.xxxLarge,
     lineHeight: constants.font.lineHeight.medium,
-    color: Colors.PrimaryDark,
+    color: colors.PrimaryDark,
   },
   H2: {
     fontFamily: constants.font.family.primary,
     fontWeight: constants.font.weight.regular,
-    fontSize: constants.font.size.xxLarge.option1,
+    fontSize: constants.font.size.xxLarge,
     lineHeight: constants.font.lineHeight.small,
-    color: Colors.PrimaryDark,
+    color: colors.PrimaryDark,
   },
   H3: {
     fontFamily: constants.font.family.primary,
     fontWeight: constants.font.weight.regular,
-    fontSize: constants.font.size.xLarge.option1,
+    fontSize: constants.font.size.xLarge,
     lineHeight: constants.font.lineHeight.small,
-    color: Colors.NeutralXdark,
+    color: colors.NeutralXdark,
   },
   H4: {
     fontFamily: constants.font.family.primary,
     fontWeight: constants.font.weight.semiBold,
-    fontSize: constants.font.size.medium.option1,
+    fontSize: constants.font.size.medium,
     lineHeight: constants.font.lineHeight.small,
-    color: Colors.PrimaryDark,
+    color: colors.PrimaryDark,
   },
   body: {
     body1: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.large.option2,
+      fontSize: constants.font.size.large,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.NeutralXdark,
+      color: colors.NeutralXdark,
     },
 
     body2: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.medium.option1,
+      fontSize: constants.font.size.medium,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.NeutralXdark,
+      color: colors.NeutralXdark,
     },
     body3: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.bold,
-      fontSize: constants.font.size.medium.option1,
+      fontSize: constants.font.size.medium,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.NeutralXdark,
+      color: colors.NeutralXdark,
     },
     body4: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.medium.option1,
+      fontSize: constants.font.size.medium,
       lineHeight: constants.font.lineHeight.small,
       textDecorationLine: constants.font.textDecoration.textDecorationLine,
-      color: Colors.NeutralXdark,
+      color: colors.NeutralXdark,
     },
   },
 
   details: {
     fontFamily: constants.font.family.primary,
     fontWeight: constants.font.weight.regular,
-    fontSize: constants.font.size.medium.option1,
+    fontSize: constants.font.size.medium,
     lineHeight: constants.font.lineHeight.small,
-    color: Colors.NeutralXdark,
+    color: colors.NeutralXdark,
   },
 
   label: {
     labelLargeBold: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.bold,
-      fontSize: constants.font.size.large.option1,
+      fontSize: constants.font.size.large,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.PrimaryXDark,
+      color: colors.PrimaryXDark,
     },
 
     labelLargeSemibold: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.semiBold,
-      fontSize: constants.font.size.large.option1,
+      fontSize: constants.font.size.large,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.PrimaryXDark,
+      color: colors.PrimaryXDark,
     },
     labelLargeRegular: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.large.option1,
+      fontSize: constants.font.size.large,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.PrimaryXDark,
+      color: colors.PrimaryXDark,
     },
     largeLabel: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.medium.option1,
+      fontSize: constants.font.size.medium,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.Neutral,
+      color: colors.Neutral,
     },
   },
 
   caption: {
     fontFamily: constants.font.family.primary,
     fontWeight: constants.font.weight.regular,
-    fontSize: constants.font.size.small.option1,
+    fontSize: constants.font.size.small,
     lineHeight: constants.font.lineHeight.small,
-    color: Colors.NeutralXdark,
+    color: colors.NeutralXdark,
   },
 
   price: {
     bigPrice: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.bold,
-      fontSize: constants.font.size.xxxLarge.option1,
+      fontSize: constants.font.size.xxxLarge,
       lineHeight: constants.font.lineHeight.large,
-      color: Colors.NeutralXdark,
+      color: colors.NeutralXdark,
     },
 
     mediumPrice: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.bold,
-      fontSize: constants.font.size.xxLarge.option1,
+      fontSize: constants.font.size.xxLarge,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.NeutralXdark,
+      color: colors.NeutralXdark,
     },
 
     smallPrice: {
       fontFamily: constants.font.family.primary,
       fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.medium.option1,
+      fontSize: constants.font.size.medium,
       lineHeight: constants.font.lineHeight.small,
-      color: Colors.NeutralXdark,
+      color: colors.NeutralXdark,
     },
   },
 };
