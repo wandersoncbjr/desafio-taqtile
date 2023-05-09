@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { typography } from "../../../typography/typography";
+import { typography } from "../../../typography";
 
 function Body3({ children }: { children: ReactNode }) {
-  return <body style={typography.body.body3}>{children}</body>;
+  return <p style={typography.body.body3}>{children}</p>;
 }
 export default Body3;
