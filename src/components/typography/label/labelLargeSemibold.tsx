@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { typography } from "../../../typography/typography";
+import { typography } from "../../../typography";
 
 function LabelLargeSemibold({ children }: { children: ReactNode }) {
   return <label style={typography.label.labelLargeSemibold}>{children}</label>;
