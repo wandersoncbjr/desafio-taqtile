@@ -1,4 +1,4 @@
-export enum Colors {
+export enum colors {
   PrimaryXDark = "#031F3D",
   PrimaryDark = "#0C4888",
   CTA = "#29D6E7",
