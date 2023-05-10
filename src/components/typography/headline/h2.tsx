@@ -1,7 +1,16 @@
 import { ReactNode } from "react";
-import { typography } from "../../../typography";
+import { constants } from "../../../typography";
+import { colors } from "../../../typography/colors";
 
-function Heading2({ children }: { children: ReactNode }) {
-  return <h2 style={typography.H2}>{children}</h2>;
+
+const h2Style = {
+  fontFamily: constants.font.family.primary,
+  fontWeight: constants.font.weight.regular,
+  fontSize: constants.font.size.xxLarge,
+  lineHeight: constants.font.lineHeight.small,
+  color: colors.PrimaryDark,
 }
-export default Heading2;
+
+export function Heading2({ children }: { children: ReactNode }) {
+  return <h2 style={h2Style}>{children}</h2>;
+}
