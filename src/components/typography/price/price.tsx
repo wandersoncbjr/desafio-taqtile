@@ -4,27 +4,8 @@ import { colors } from "../../../typography/colors";
 
 const basePriceStyle = {
   fontFamily: constants.font.family.primary,
-  fontWeight: constants.font.weight.bold,
   lineHeight: constants.font.lineHeight.small,
   color: colors.NeutralXdark,
-};
-
-const stylePrice = {
-  price: {
-    bigPrice: {
-      ...basePriceStyle,
-      fontSize: constants.font.size.xxxLarge,
-    },
-    mediumPrice: {
-      ...basePriceStyle,
-      fontSize: constants.font.size.xxLarge,
-    },
-    smallPrice: {
-      ...basePriceStyle,
-      fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.medium,
-    },
-  },
 };
 
 interface PriceProps {
@@ -33,15 +14,19 @@ interface PriceProps {
 }
 
 export function Price({ type = "small", children }: PriceProps) {
-  let priceTypography: typeof stylePrice.price.bigPrice;
+  const style = {
+    ...basePriceStyle,
+    fontSize:
+      type === "big"
+        ? constants.font.size.xxxLarge
+        : type === "medium"
+        ? constants.font.size.xxLarge
+        : constants.font.size.medium,
+    fontWeight:
+      type === "small"
+        ? constants.font.weight.regular
+        : constants.font.weight.bold,
+  };
 
-  if (type === "big") {
-    priceTypography = stylePrice.price.bigPrice;
-  } else if (type === "medium") {
-    priceTypography = stylePrice.price.mediumPrice;
-  } else {
-    priceTypography = stylePrice.price.smallPrice;
-  }
-
-  return <p style={priceTypography}>{children}</p>;
+  return <p style={style}>{children}</p>;
 }

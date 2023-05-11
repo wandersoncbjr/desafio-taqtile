@@ -6,57 +6,30 @@ const baseLabelStyle = {
   fontFamily: constants.font.family.primary,
   fontSize: constants.font.size.large,
   lineHeight: constants.font.lineHeight.small,
-  color: colors.PrimaryXDark,
-};
-
-const labelStyle = {
-  label: {
-    labelLargeBold: {
-      ...baseLabelStyle,
-      fontWeight: constants.font.weight.bold,
-    },
-
-    labelLargeSemibold: {
-      ...baseLabelStyle,
-      fontWeight: constants.font.weight.semiBold,
-    },
-
-    labelLargeRegular: {
-      ...baseLabelStyle,
-      fontWeight: constants.font.weight.regular,
-    },
-
-    largeLabel: {
-      ...baseLabelStyle,
-      fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.medium,
-      color: colors.Neutral,
-    },
-  },
 };
 
 interface labelProps {
-  type?: "bold" | "semiBold" | "regular";
+  type?: "bold" | "semiBold" | "regular" | "neutral";
   children?: ReactNode;
 }
 
-export function Label({ type, children }: labelProps) {
-  let labelTypography;
+export function Label({ type = "regular", children }: labelProps) {
+  const style = {
+    ...baseLabelStyle,
+    fontWeight:
+      type === "bold"
+        ? constants.font.weight.bold
+        : type === "semiBold"
+        ? constants.font.weight.semiBold
+        : type === "neutral"
+        ? constants.font.weight.regular
+        : constants.font.weight.regular,
+    fontSize:
+      type === "neutral"
+        ? constants.font.size.medium
+        : constants.font.size.large,
+    color: type === "neutral" ? colors.Neutral : colors.PrimaryXDark,
+  };
 
-  switch (type) {
-    case "bold":
-      labelTypography = labelStyle.label.labelLargeBold;
-      break;
-    case "regular":
-      labelTypography = labelStyle.label.labelLargeRegular;
-      break;
-    case "semiBold":
-      labelTypography = labelStyle.label.labelLargeSemibold;
-      break;
-
-    default:
-      labelTypography = labelStyle.label.largeLabel;
-      break;
-  }
-  return <p style={labelTypography}>{children}</p>;
+  return <label style={style}>{children}</label>;
 }

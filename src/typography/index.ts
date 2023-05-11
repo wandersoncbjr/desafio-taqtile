@@ -26,7 +26,7 @@ export const constants = {
     },
 
     textDecoration: {
-      textDecorationLine: "LineThrough",
+      textDecorationLine: "line-through",
     },
   },
 };
