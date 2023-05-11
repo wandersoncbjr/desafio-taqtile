@@ -10,7 +10,8 @@ const dtStyle = {
   color: colors.NeutralXdark,
 };
 
-function Dt({ children }: { children: ReactNode }) {
+function DT({ children }: { children: ReactNode }) {
+
   return <dt style={dtStyle}>{children}</dt>;
 }
 export default Dt;
