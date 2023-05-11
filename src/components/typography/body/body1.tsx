@@ -1,6 +1,17 @@
 import { ReactNode } from "react";
-import { typography } from "../../../typography";
+import { constants } from "../../../typography";
+import { colors } from "../../../typography/colors";
+
+const bodyStyle = {
+  body: {
+    fontFamily: constants.font.family.primary,
+    fontWeight: constants.font.weight.regular,
+    fontSize: constants.font.size.large,
+    lineHeight: constants.font.lineHeight.small,
+    color: colors.NeutralXdark,
+  },
+};
 
 export function Body1({ children }: { children: ReactNode }) {
-  return <p style={typography.body.body1}>{children}</p>;
+  return <p style={bodyStyle.body}>{children}</p>;
 }

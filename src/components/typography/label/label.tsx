@@ -1,47 +1,62 @@
 import { ReactNode } from "react";
-import { constants, typography } from "../../../typography";
+import { constants } from "../../../typography";
 import { colors } from "../../../typography/colors";
+
+const baseLabelStyle = {
+  fontFamily: constants.font.family.primary,
+  fontSize: constants.font.size.large,
+  lineHeight: constants.font.lineHeight.small,
+  color: colors.PrimaryXDark,
+};
 
 const labelStyle = {
   label: {
     labelLargeBold: {
-      fontFamily: constants.font.family.primary,
+      ...baseLabelStyle,
       fontWeight: constants.font.weight.bold,
-      fontSize: constants.font.size.large,
-      lineHeight: constants.font.lineHeight.small,
-      color: colors.PrimaryXDark,
     },
 
     labelLargeSemibold: {
-      fontFamily: constants.font.family.primary,
+      ...baseLabelStyle,
       fontWeight: constants.font.weight.semiBold,
-      fontSize: constants.font.size.large,
-      lineHeight: constants.font.lineHeight.small,
-      color: colors.PrimaryXDark,
     },
+
     labelLargeRegular: {
-      fontFamily: constants.font.family.primary,
+      ...baseLabelStyle,
       fontWeight: constants.font.weight.regular,
-      fontSize: constants.font.size.large,
-      lineHeight: constants.font.lineHeight.small,
-      color: colors.PrimaryXDark,
     },
+
     largeLabel: {
-      fontFamily: constants.font.family.primary,
+      ...baseLabelStyle,
       fontWeight: constants.font.weight.regular,
       fontSize: constants.font.size.medium,
-      lineHeight: constants.font.lineHeight.small,
       color: colors.Neutral,
     },
   },
 };
 
 interface labelProps {
-  type?: "regular" | "bold" | "semiBold";
+  type?: "bold" | "semiBold" | "regular";
   children?: ReactNode;
 }
 
-export function Label({ children, weight }: LabelProps) {
-  const style = labelStyle.label;
-  return <label style={style}>{children}</label>;
+export function Label({ type, children }: labelProps) {
+  let labelTypography;
+
+  switch (type) {
+    case "bold":
+      labelTypography = labelStyle.label.labelLargeBold;
+      break;
+    case "regular":
+      labelTypography = labelStyle.label.labelLargeRegular;
+      break;
+    case "semiBold":
+      labelTypography = labelStyle.label.labelLargeSemibold;
+      break;
+
+    default:
+      labelTypography = labelStyle.label.largeLabel;
+      break;
+  }
+  return <p style={labelTypography}>{children}</p>;
 }

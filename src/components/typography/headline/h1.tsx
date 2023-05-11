@@ -13,4 +13,3 @@ const h1Style = {
 export function Heading1({ children }: { children: ReactNode }) {
   return <h1 style={h1Style}>{children}</h1>;
 }
-

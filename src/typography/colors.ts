@@ -10,6 +10,6 @@ export enum colors {
   NeutralMedium = "#908E8E",
   NeutralDark = "#3A3335",
   NeutralXdark = "#484848",
-  FeedbackSuccess = "#2AC084", 
+  FeedbackSuccess = "#2AC084",
   FeedbackError = "#EB5E55",
 }

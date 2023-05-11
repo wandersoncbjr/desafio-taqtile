@@ -2,30 +2,27 @@ import { ReactNode } from "react";
 import { constants } from "../../../typography";
 import { colors } from "../../../typography/colors";
 
+const basePriceStyle = {
+  fontFamily: constants.font.family.primary,
+  fontWeight: constants.font.weight.bold,
+  lineHeight: constants.font.lineHeight.small,
+  color: colors.NeutralXdark,
+};
+
 const stylePrice = {
   price: {
     bigPrice: {
-      fontFamily: constants.font.family.primary,
-      fontWeight: constants.font.weight.bold,
+      ...basePriceStyle,
       fontSize: constants.font.size.xxxLarge,
-      lineHeight: constants.font.lineHeight.large,
-      color: colors.NeutralXdark,
     },
-
     mediumPrice: {
-      fontFamily: constants.font.family.primary,
-      fontWeight: constants.font.weight.bold,
+      ...basePriceStyle,
       fontSize: constants.font.size.xxLarge,
-      lineHeight: constants.font.lineHeight.small,
-      color: colors.NeutralXdark,
     },
-
     smallPrice: {
-      fontFamily: constants.font.family.primary,
+      ...basePriceStyle,
       fontWeight: constants.font.weight.regular,
       fontSize: constants.font.size.medium,
-      lineHeight: constants.font.lineHeight.small,
-      color: colors.NeutralXdark,
     },
   },
 };

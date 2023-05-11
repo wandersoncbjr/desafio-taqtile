@@ -10,8 +10,6 @@ const ddStyle = {
   color: colors.NeutralXdark,
 };
 
-function DD({ children }: { children: ReactNode }) {
-
+export function DD({ children }: { children: ReactNode }) {
   return <dd style={ddStyle}>{children}</dd>;
 }
-export default Dd;
