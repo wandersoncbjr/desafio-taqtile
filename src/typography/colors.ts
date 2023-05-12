@@ -12,4 +12,4 @@ export const Colors = {
   NeutralXdark: '#484848',
   FeedbackSuccess: '#2AC084',
   FeedbackError: '#EB5E55',
-};
+}
