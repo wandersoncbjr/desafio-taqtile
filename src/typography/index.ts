@@ -24,6 +24,7 @@ export const constants = {
       medium: 500,
       regular: 400,
     },
+    radius: "4px",
 
     textDecoration: {
       textDecorationLine: "line-through",
