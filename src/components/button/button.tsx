@@ -13,6 +13,7 @@ const stylesButton = {
 interface ButtonProps {
   type?: "defaultCompact" | "disableCompact" | "disableDefault";
   variant?: "primary" | "secondary" | "CTA";
+  icon?: React.ReactNode;
   children?: ReactNode;
   onClick?: () => void;
 }
@@ -21,6 +22,7 @@ export function ButtonPrimary({
   type,
   variant,
   children,
+  icon,
   onClick,
 }: ButtonProps) {
   const [hoveractive, setHoveractive] = useState(false);
@@ -65,6 +67,7 @@ export function ButtonPrimary({
       }
     >
       {children}
+      {!!icon && <span>{icon}</span>}
     </button>
   );
 }
