@@ -10,8 +10,10 @@ const stylesButton = {
   borderRadius: constants.font.radius,
   cursor: constantsButton.cursor,
 };
+
 interface ButtonProps {
-  type?: "defaultCompact" | "disableCompact" | "disableDefault";
+  compact?: boolean;
+  disabled?: boolean;
   variant?: "primary" | "secondary" | "CTA";
   icon?: React.ReactNode;
   children?: ReactNode;
@@ -19,7 +21,8 @@ interface ButtonProps {
 }
 
 export function ButtonPrimary({
-  type,
+  compact,
+  disabled,
   variant,
   children,
   icon,
@@ -39,7 +42,7 @@ export function ButtonPrimary({
     ...stylesButton,
     backgroundColor:
       variant === "primary"
-        ? type === "disableCompact" || type === "disableDefault"
+        ? disabled
           ? colors.NeutralLight
           : colors.PrimaryXDark
         : variant === "CTA"
@@ -48,26 +51,23 @@ export function ButtonPrimary({
         ? colors.Neutral
         : colors.PrimaryXDark,
     boxShadow: hoveractive ? constantsButton.boxShadow : "none",
-    height:
-      type === "defaultCompact" || type === "disableCompact"
-        ? constantsButton.defaultCompactHeight
-        : constantsButton.defaultHeight,
-    border:
-      variant === "secondary" ? `  2px solid ${colors.Accessory1}` : "none",
+    height: compact
+      ? constantsButton.defaultCompactHeight
+      : constantsButton.defaultHeight,
+    border: variant === "secondary" ? `2px solid ${colors.Accessory1}` : "none",
     color: variant === "secondary" ? colors.Accessory1 : colors.Neutral,
   };
+
   return (
     <button
       onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
       onClick={onClick}
       style={styles}
-      disabled={
-        type === "disableCompact" || type === "disableDefault" ? true : false
-      }
+      disabled={disabled}
     >
+      {!!icon && <span style={{ marginRight: "8px" }}>{icon}</span>}
       {children}
-      {!!icon && <span>{icon}</span>}
     </button>
   );
 }
