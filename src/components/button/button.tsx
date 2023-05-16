@@ -9,6 +9,9 @@ const stylesButton = {
   fontWeight: constantsButton.weight,
   borderRadius: constants.font.radius,
   cursor: constantsButton.cursor,
+  display: constantsButton.display,
+  justifyContent: constantsButton.justifyContent,
+  alignItems: constantsButton.alignItems,
 };
 
 interface ButtonProps {
