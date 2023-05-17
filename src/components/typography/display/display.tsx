@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { constants } from "../../../typography";
-import { colors } from "../../../typography/colors";
+import { ReactNode } from 'react';
+import { constants } from '../../../typography';
+import { colors } from '../../../typography/colors';
 
 const displatStyle = {
   fontFamily: constants.font.family.primary,

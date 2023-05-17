@@ -1,42 +1,35 @@
-import { ReactNode, useState } from "react";
-import { constants } from "../../typography";
-import { colors } from "../../typography/colors";
+import React, { ReactNode, useState } from 'react';
+import { constants } from '../../typography';
+import { colors } from '../../typography/colors';
 
 export const constantsButton = {
-  defaultCompactHeight: "40px",
-  defaultHeight: "48px",
-  boxShadow: "0px 4px 4px rgba(0, 0, 0, 0.25)",
+  defaultCompactHeight: '40px',
+  defaultHeight: '48px',
+  boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
 };
 
 const stylesButton = {
-  padding: "16px",
-  minWidth: "143px",
+  padding: '16px',
+  minWidth: '143px',
   fontFamily: constants.font.family.primary,
   fontWeight: constants.font.weight.bold,
   borderRadius: constants.font.radius,
-  cursor: "pointer",
-  display: "flex",
-  justifyContent: "center",
-  alignItems: "center",
+  cursor: 'pointer',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
 };
 
 interface ButtonProps {
   compact?: boolean;
   disabled?: boolean;
-  variant?: "primary" | "secondary" | "CTA";
+  variant?: 'primary' | 'secondary' | 'CTA';
   icon?: React.ReactNode;
   children?: ReactNode;
   onClick?: () => void;
 }
 
-export function ButtonPrimary({
-  compact,
-  disabled,
-  variant,
-  children,
-  icon,
-  onClick,
-}: ButtonProps) {
+export function ButtonPrimary({ compact, disabled, variant, children, icon, onClick }: ButtonProps) {
   const [hoveractive, setHoveractive] = useState(false);
 
   const mouseEnter = () => {
@@ -47,25 +40,23 @@ export function ButtonPrimary({
     setHoveractive(false);
   };
 
-  let backgroundColor, boxShadow, height, border, color;
+  let backgroundColor, border, color;
 
-  if (variant === "primary") {
+  if (variant === 'primary') {
     backgroundColor = disabled ? colors.NeutralLight : colors.PrimaryXDark;
-  } else if (variant === "CTA") {
+  } else if (variant === 'CTA') {
     backgroundColor = colors.CTA;
-  } else if (variant === "secondary") {
+  } else if (variant === 'secondary') {
     backgroundColor = colors.Neutral;
     border = `2px solid ${colors.Accessory1}`;
     color = colors.Accessory1;
   } else {
     backgroundColor = colors.PrimaryXDark;
   }
-  boxShadow = hoveractive ? constantsButton.boxShadow : "none";
-  height = compact
-    ? constantsButton.defaultCompactHeight
-    : constantsButton.defaultHeight;
-  border = variant === "secondary" ? `2px solid ${colors.Accessory1}` : "none";
-  color = variant === "secondary" ? colors.Accessory1 : colors.Neutral;
+  const boxShadow = hoveractive ? constantsButton.boxShadow : 'none';
+  const height = compact ? constantsButton.defaultCompactHeight : constantsButton.defaultHeight;
+  border = variant === 'secondary' ? `2px solid ${colors.Accessory1}` : 'none';
+  color = variant === 'secondary' ? colors.Accessory1 : colors.Neutral;
 
   const styles = {
     ...stylesButton,
@@ -77,14 +68,8 @@ export function ButtonPrimary({
   };
 
   return (
-    <button
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
-      onClick={onClick}
-      style={styles}
-      disabled={disabled}
-    >
-      {!!icon && <span style={{ marginRight: "8px" }}>{icon}</span>}
+    <button onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onClick={onClick} style={styles} disabled={disabled}>
+      {!!icon && <span style={{ marginRight: '8px' }}>{icon}</span>}
       {children}
     </button>
   );
