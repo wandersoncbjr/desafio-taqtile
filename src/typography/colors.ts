@@ -1,7 +1,8 @@
+
 export const Colors = {
   PrimaryXDark: '#031F3D',
   PrimaryDark: '#0C4888',
-  CTA: '#29D6E7',
+  CTA: '#2E9CA3',
   Accessory1: '#0C488880',
   Accessory2: '#28ADBA',
   Neutral: '#FFFFFF',
