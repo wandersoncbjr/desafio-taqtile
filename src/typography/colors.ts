@@ -1,5 +1,4 @@
-
-export const Colors = {
+export const colors = {
   PrimaryXDark: '#031F3D',
   PrimaryDark: '#0C4888',
   CTA: '#2E9CA3',
@@ -13,4 +12,4 @@ export const Colors = {
   NeutralXdark: '#484848',
   FeedbackSuccess: '#2AC084',
   FeedbackError: '#EB5E55',
-}
+};

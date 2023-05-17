@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
-import { constants } from "../../../typography";
-import { colors } from "../../../typography/colors";
+import { ReactNode } from 'react';
+import { constants } from '../../../typography';
+import { colors } from '../../../typography/colors';
 
 const h4Style = {
   fontFamily: constants.font.family.primary,
