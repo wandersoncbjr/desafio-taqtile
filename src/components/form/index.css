@@ -1,0 +1,22 @@
+.input-form {
+  width: 95%;
+  border: none;
+  outline: none;
+  margin-top: 5px;
+}
+
+.container-input {
+  display: flex;
+  height: 72px;
+  align-items: center;
+}
+
+.container-label {
+  margin-left: 10px;
+  align-items: center;
+  width: 100%;
+}
+
+.icon-placeholder {
+  margin-right: 10px;
+}
