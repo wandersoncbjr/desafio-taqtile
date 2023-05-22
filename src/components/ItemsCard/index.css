@@ -1,0 +1,8 @@
+.container-card {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  height: 91.49px;
+  min-width: 110.16px;
+}
