@@ -4,17 +4,15 @@ import './index.css';
 import { constants } from '../../typography';
 import { Label } from '../typography/label/label';
 
-interface InputProps {
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label?: string;
   error?: boolean;
-  type?: string;
   caption?: string;
-  placeholder?: string;
   icon?: React.ReactNode;
   iconError?: React.ReactNode;
 }
 
-export function Input({ error, type, placeholder, label, icon, iconError, caption }: InputProps) {
+export function Input({ error, label, icon, iconError, caption, ...rest }: InputProps) {
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
 
@@ -55,11 +53,10 @@ export function Input({ error, type, placeholder, label, icon, iconError, captio
             <input
               className="input-form"
               onChange={handleInputChange}
-              type={type}
-              placeholder={placeholder}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
               style={inputForm}
+              {...rest}
             />
           </div>
         </div>
