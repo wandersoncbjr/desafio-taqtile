@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { colors } from '../../typography/colors';
 import './index.css';
 import { constants } from '../../typography';
+import { Label } from '../typography/label/label';
 
 interface InputProps {
   label?: string;
@@ -13,35 +14,43 @@ interface InputProps {
   iconError?: React.ReactNode;
 }
 
-export function Input({ error, type, caption, placeholder, label, icon, iconError }: InputProps) {
+export function Input({ error, type, placeholder, label, icon, iconError, caption }: InputProps) {
   const [focused, setFocused] = useState(false);
   const [inputValue, setInputValue] = useState('');
+
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
-    console.log(event.target.value);
   };
+
   const inputStyle = {
     borderRadius: '8px',
-    border: focused
-      ? '2px solid'
-      : error
-      ? `1px solid ${colors.FeedbackError} `
-      : inputValue === ''
-      ? ` 1px solid ${colors.NeutralLight}`
-      : '1px solid',
+    border: '',
   };
+
+  const inputForm = {
+    fontFamily: constants.font.family.primary,
+    fontSize: constants.font.size.large,
+  };
+  const captionStyle = {
+    color: colors.FeedbackError,
+    fontFamily: constants.font.family.primary,
+  };
+
+  if (focused) {
+    inputStyle.border = '2px solid';
+  } else if (error) {
+    inputStyle.border = `1px solid ${colors.FeedbackError}`;
+  } else if (inputValue === '') {
+    inputStyle.border = `1px solid ${colors.NeutralLight}`;
+  } else {
+    inputStyle.border = '1px solid';
+  }
+
   return (
     <div className="container">
       <div style={inputStyle} className="container-input">
         <div className="container-label">
-          <label
-            style={{
-              fontFamily: constants.font.family.primary,
-              color: colors.NeutralMedium,
-            }}
-          >
-            {label}
-          </label>
+          <Label>{label}</Label>
           <div className="input-icon">
             <input
               className="input-form"
@@ -50,21 +59,18 @@ export function Input({ error, type, caption, placeholder, label, icon, iconErro
               placeholder={placeholder}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
-              style={{
-                fontFamily: constants.font.family.primary,
-                fontSize: constants.font.size.large,
-              }}
-            ></input>
+              style={inputForm}
+            />
           </div>
         </div>
-        {icon ? <span className="icon-placeholder">{icon}</span> : null}
+        {icon && <span className="icon-placeholder">{icon}</span>}
       </div>
-      {error ? (
-        <span>
+      {error && (
+        <span style={captionStyle}>
           {iconError}
           {caption}
         </span>
-      ) : null}
+      )}
     </div>
   );
 }
