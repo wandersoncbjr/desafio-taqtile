@@ -10,8 +10,8 @@ interface PropsItemsCard {
 export function ItemsCard({ icon, title }: PropsItemsCard) {
   return (
     <div className="container-card">
-      <div className="icon-card">{icon}</div>
-      <div className="title-card">{<Heading4>{title}</Heading4>}</div>
+      <div>{icon}</div>
+      <div>{<Heading4>{title}</Heading4>}</div>
     </div>
   );
 }
