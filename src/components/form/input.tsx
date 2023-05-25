@@ -46,10 +46,10 @@ export function Input({ error, label, icon, iconError, caption, ...rest }: Input
 
   return (
     <div className="container">
-      <div style={inputStyle} className="container-input">
-        <div className="container-label">
+      <div style={inputStyle} className="style-input">
+        <div className="style-label">
           <Label>{label}</Label>
-          <div className="input-icon">
+          <div>
             <input
               className="input-form"
               onChange={handleInputChange}

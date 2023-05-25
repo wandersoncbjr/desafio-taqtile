@@ -5,13 +5,13 @@
   margin-top: 5px;
 }
 
-.container-input {
+.style-input {
   display: flex;
   height: 72px;
   align-items: center;
 }
 
-.container-label {
+.style-label {
   margin-left: 10px;
   align-items: center;
   width: 100%;
