@@ -1,0 +1,10 @@
+.container-badges {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 7px;
+  cursor: pointer;
+  height: 47px;
+  min-width: 90px;
+  gap: 5px;
+}
