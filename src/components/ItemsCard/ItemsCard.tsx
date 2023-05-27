@@ -11,7 +11,7 @@ export function ItemsCard({ icon, title }: PropsItemsCard) {
   return (
     <div className="container-card">
       <div>{icon}</div>
-      <div>{<Heading4>{title}</Heading4>}</div>
+      <Heading4>{title}</Heading4>
     </div>
   );
 }
