@@ -8,6 +8,7 @@ const h3Style = {
   fontSize: constants.font.size.xLarge,
   lineHeight: constants.font.lineHeight.small,
   color: colors.NeutralXdark,
+  margin: 0,
 };
 
 export function Heading3({ children }: { children: ReactNode }) {

@@ -7,6 +7,7 @@ const baseTypography = {
   fontSize: constants.font.size.medium,
   lineHeight: constants.font.lineHeight.small,
   color: colors.NeutralXdark,
+  margin: 0,
 };
 
 interface BodyProps {
