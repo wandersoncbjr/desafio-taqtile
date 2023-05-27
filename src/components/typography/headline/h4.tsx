@@ -8,6 +8,7 @@ const h4Style = {
   fontSize: constants.font.size.medium,
   lineHeight: constants.font.lineHeight.small,
   color: colors.PrimaryDark,
+  margin: 0,
 };
 
 export function Heading4({ children }: { children: ReactNode }) {
