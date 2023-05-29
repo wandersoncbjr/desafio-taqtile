@@ -3,7 +3,7 @@ import { Caption } from '../typography/caption/caption';
 import './index.css';
 import { ReactNode, useState } from 'react';
 
-export interface PropsBadges {
+export interface BadgeProps {
   title: string;
   icon: ReactNode;
   onClick: () => void;
