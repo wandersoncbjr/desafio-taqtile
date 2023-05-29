@@ -5,8 +5,8 @@ import './index.css';
 
 interface PropsCard {
   image: React.ReactNode;
-  title: string;
-  description: string;
+  title?: string;
+  description?: string;
 }
 
 export function Card({ image, title, description }: PropsCard) {
