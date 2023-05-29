@@ -6,7 +6,7 @@ import Img from './components/cardCategory/svg.svg';
 function App() {
   return (
     <div className="App">
-      <Card image={<img src={Img} />} title="Com piscina" description="723,457 Imóveis"></Card>
+      <Card image={<img src={Img} />} title="Com piscina" description="723,457 Imóveis" />
     </div>
   );
 }
