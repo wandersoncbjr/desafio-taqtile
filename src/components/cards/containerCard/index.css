@@ -1,0 +1,10 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.container h3,
+p {
+  word-wrap: break-word;
+}
