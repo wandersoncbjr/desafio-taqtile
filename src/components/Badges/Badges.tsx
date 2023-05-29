@@ -10,7 +10,7 @@ export interface BadgeProps {
   selected: boolean;
 }
 
-export function Badges({ title, icon, onClick, selected }: PropsBadges) {
+export function Badge({ title, icon, onClick, selected }: PropsBadges) {
   const [hover, setHover] = useState(false);
   const mouseEnter = () => {
     setHover(true);
