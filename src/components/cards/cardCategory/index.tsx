@@ -1,5 +1,5 @@
-import { Body2 } from '../../typography/body/body2';
-import { Heading3 } from '../../typography/headline/h3';
+import { BodySecondary } from '../../typography/body/body2';
+import { H3 } from '../../typography/headline/h3';
 import React from 'react';
 import './index.css';
 import { ContainerCard } from '../containerCard';
@@ -15,8 +15,8 @@ export function CardCategory({ image, title, description }: CardProps) {
     <ContainerCard>
       {image}
       <div className="title-description">
-        <Heading3>{title}</Heading3>
-        <Body2 type="regular">{description}</Body2>
+        <H3>{title}</H3>
+        <BodySecondary type="regular">{description}</BodySecondary>
       </div>
     </ContainerCard>
   );
