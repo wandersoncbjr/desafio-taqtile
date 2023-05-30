@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 import { constants } from '../../../typography';
 import { colors } from '../../../typography/colors';
 
-interface PropsCaption {
+interface CaptionProps {
   color: 'black' | 'white';
   children: ReactNode;
 }
