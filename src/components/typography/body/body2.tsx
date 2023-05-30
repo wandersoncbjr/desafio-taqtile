@@ -7,6 +7,7 @@ const baseTypography = {
   fontSize: constants.font.size.medium,
   lineHeight: constants.font.lineHeight.small,
   color: colors.NeutralXdark,
+  margin: 0,
 };
 
 interface BodyProps {
@@ -14,7 +15,7 @@ interface BodyProps {
   children?: ReactNode;
 }
 
-export function Body2({ type = 'regular', children }: BodyProps) {
+export function BodySecondary({ type = 'regular', children }: BodyProps) {
   const style = {
     ...baseTypography,
     fontWeight: type === 'bold' ? constants.font.weight.bold : constants.font.weight.regular,

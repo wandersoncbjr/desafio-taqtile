@@ -12,4 +12,5 @@ export const colors = {
   NeutralXdark: '#484848',
   FeedbackSuccess: '#2AC084',
   FeedbackError: '#EB5E55',
+  boxShadow: '0px 4px 4px rgba(153, 155, 168, 0.15)',
 };
