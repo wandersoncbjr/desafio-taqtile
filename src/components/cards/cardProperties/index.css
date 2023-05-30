@@ -1,0 +1,18 @@
+.container-content {
+  padding-left: 8px;
+  padding-inline-end: 12px;
+}
+
+.container-price-icon {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-icons,
+.card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 4px 12px 4px;
+}
