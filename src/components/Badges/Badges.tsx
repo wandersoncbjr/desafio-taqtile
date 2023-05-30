@@ -32,7 +32,7 @@ export function Badge({ title, icon, onClick, selected }: BadgeProps) {
       className="container-badges"
       onClick={handleClick}
       style={badgesStyle}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
     >
       <div className="icon">{icon}</div>
