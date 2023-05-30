@@ -7,7 +7,7 @@ import './index.css';
 
 interface ContainerProps {
   img?: React.ReactNode;
-  price: string;
+  price: number;
   title: string;
   description: string;
   icon: React.ReactNode;
@@ -20,7 +20,7 @@ export function CardProperties({ img, price, title, description, icon, icons }: 
       {img}
       <div className="container-content">
         <div className="container-price-icon">
-          <Price type="medium">{price}</Price>
+          <Price type="medium">{`R$${price}`}</Price>
           {icon}
         </div>
         <Body2 type="bold">{title}</Body2>

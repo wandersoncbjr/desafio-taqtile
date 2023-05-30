@@ -20,7 +20,7 @@ function App() {
         icon={<FontAwesomeIcon icon={faHeart} />}
         icons={icons}
         img={<img src={Img} />}
-        price="R$400.000"
+        price={4000}
         title="Alphaville, SP"
         description="Barueri, 32394, São Paulo"
       ></CardProperties>
