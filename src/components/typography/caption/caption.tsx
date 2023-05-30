@@ -8,6 +8,7 @@ const captionStyle = {
   fontSize: constants.font.size.small,
   lineHeight: constants.font.lineHeight.small,
   color: colors.NeutralXdark,
+  margin: 0,
 };
 
 export function Caption({ children }: { children: ReactNode }) {
