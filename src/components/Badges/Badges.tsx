@@ -10,7 +10,7 @@ export interface BadgeProps {
   selected: boolean;
 }
 
-export function Badge({ title, icon, onClick, selected }: PropsBadges) {
+export function Badge({ title, icon, onClick, selected }: BadgeProps) {
   const [hover, setHover] = useState(false);
   const mouseEnter = () => {
     setHover(true);
@@ -32,11 +32,13 @@ export function Badge({ title, icon, onClick, selected }: PropsBadges) {
       className="container-badges"
       onClick={handleClick}
       style={badgesStyle}
-      onMouseEnter={handleMouseEnter}
+      onMouseEnter={mouseEnter}
       onMouseLeave={mouseLeave}
     >
-      <div>{icon}</div>
-      <Caption color={selected ? 'white' : 'black'}> {title}</Caption>
+      <div className="icon">{icon}</div>
+      <div className="image">
+        <Caption color={selected ? 'white' : 'black'}> {title}</Caption>
+      </div>
     </div>
   );
 }

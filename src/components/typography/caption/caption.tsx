@@ -7,13 +7,22 @@ interface CaptionProps {
   children: ReactNode;
 }
 
-export function Caption({ children, color }: PropsCaption) {
-  const captionStyle = {
-    fontFamily: constants.font.family.primary,
-    fontWeight: constants.font.weight.regular,
-    fontSize: constants.font.size.small,
-    lineHeight: constants.font.lineHeight.small,
-    color: color === 'black' ? colors.NeutralDark : colors.Neutral,
-  };
-  return <p style={captionStyle}>{children}</p>;
+const captionStyle = {
+  fontFamily: constants.font.family.primary,
+  fontWeight: constants.font.weight.regular,
+  fontSize: constants.font.size.small,
+  lineHeight: constants.font.lineHeight.small,
+};
+
+export function Caption({ children, color }: CaptionProps) {
+  return (
+    <p
+      style={{
+        ...captionStyle,
+        color: color === 'black' ? colors.NeutralDark : colors.Neutral,
+      }}
+    >
+      {children}
+    </p>
+  );
 }
