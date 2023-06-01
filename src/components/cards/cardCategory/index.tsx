@@ -6,8 +6,8 @@ import { ContainerCard } from '../containerCard';
 
 interface CardProps {
   image?: React.ReactNode;
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
 }
 
 export function CardCategory({ image, title, description }: CardProps) {
