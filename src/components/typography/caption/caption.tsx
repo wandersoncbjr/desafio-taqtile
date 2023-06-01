@@ -3,7 +3,7 @@ import { constants } from '../../../typography';
 import { colors } from '../../../typography/colors';
 
 interface CaptionProps {
-  color?: 'black' | 'white' | 'Neutral/X-dark';
+  color?: 'black' | 'white' | 'neutralXDark';
   children: ReactNode;
 }
 
@@ -16,15 +16,14 @@ const captionStyle = {
 };
 
 export function Caption({ children, color }: CaptionProps) {
-  return (
-    <p
-      style={{
-        ...captionStyle,
-        color:
-          color === 'black' ? colors.NeutralDark : color === 'Neutral/X-dark' ? colors.NeutralXdark : colors.Neutral,
-      }}
-    >
-      {children}
-    </p>
-  );
+  let textColor;
+  if (color === 'black') {
+    textColor = colors.NeutralDark;
+  } else if (color === 'neutralXDark') {
+    textColor = colors.NeutralXdark;
+  } else {
+    textColor = colors.Neutral;
+  }
+
+  return <p style={{ ...captionStyle, color: textColor }}>{children}</p>;
 }
