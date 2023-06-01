@@ -4,8 +4,8 @@ import './index.css';
 import { ReactNode, useState } from 'react';
 
 export interface BadgeProps {
-  title: string;
-  icon: ReactNode;
+  title?: string;
+  icon?: ReactNode;
   onClick: () => void;
   selected: boolean;
 }

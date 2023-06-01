@@ -4,8 +4,3 @@
   cursor: pointer;
   overflow: auto;
 }
-
-.card-containe h3,
-p {
-  word-wrap: break-word;
-}
