@@ -12,10 +12,10 @@ export interface BadgeProps {
 
 export function Badge({ title, icon, onClick, selected }: BadgeProps) {
   const [hover, setHover] = useState(false);
-  const mouseEnter = () => {
+  const handleMouseEnter = () => {
     setHover(true);
   };
-  const mouseLeave = () => {
+  const handleMouseLeave = () => {
     setHover(false);
   };
   const handleClick = () => {
@@ -32,8 +32,8 @@ export function Badge({ title, icon, onClick, selected }: BadgeProps) {
       className="container-badges"
       onClick={handleClick}
       style={badgesStyle}
-      onMouseEnter={mouseEnter}
-      onMouseLeave={mouseLeave}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     >
       <div className="icon">{icon}</div>
       <div className="image">
