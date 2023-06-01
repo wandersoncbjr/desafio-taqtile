@@ -35,8 +35,8 @@ export function Badge({ title, icon, onClick, selected }: BadgeProps) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div className="icon">{icon}</div>
-      <div className="image">
+      <div className="icon-badge">{icon}</div>
+      <div className="image-badge">
         <Caption color={selected ? 'white' : 'black'}> {title}</Caption>
       </div>
     </div>
