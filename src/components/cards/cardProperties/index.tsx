@@ -24,23 +24,23 @@ interface ContainerProps {
   data?: DataProps[];
 }
 
-export function CardProperties({ img, price, title, description, icon, data }: ContainerProps) {
-  const renderIcon = (category: string): React.ReactNode => {
-    const categoryIconMapper: Record<string, React.ReactNode> = {
-      bathroom: <FontAwesomeIcon color={colors.PrimaryDark} icon={faToilet} />,
-      room: <FontAwesomeIcon color={colors.PrimaryDark} icon={faBed} />,
-      'square-meter': <FontAwesomeIcon color={colors.PrimaryDark} icon={faRulerCombined} />,
-    };
-
-    return categoryIconMapper[category];
+const renderIcon = (category: string): React.ReactNode => {
+  const categoryIconMapper: Record<string, React.ReactNode> = {
+    bathroom: <FontAwesomeIcon color={colors.PrimaryDark} icon={faToilet} />,
+    room: <FontAwesomeIcon color={colors.PrimaryDark} icon={faBed} />,
+    'square-meter': <FontAwesomeIcon color={colors.PrimaryDark} icon={faRulerCombined} />,
   };
+
+  return categoryIconMapper[category];
+};
+export function CardProperties({ img, price, title, description, icon, data }: ContainerProps) {
   const formattedPrice = formatPrice(price);
   return (
     <ContainerCard>
       {img}
       <div className="container-content">
         <div className="container-price-icon">
-          <Price type="medium">{`R$${formattedPrice}`}</Price>
+          <Price type="medium">{`${formattedPrice}`}</Price>
           {icon}
         </div>
         <BodySecondary type="bold">{title}</BodySecondary>
