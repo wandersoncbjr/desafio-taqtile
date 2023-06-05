@@ -11,6 +11,6 @@ const h3Style = {
   margin: 0,
 };
 
-export function Heading3({ children }: { children: ReactNode }) {
+export function H3({ children }: { children: ReactNode }) {
   return <h3 style={h3Style}>{children}</h3>;
 }
