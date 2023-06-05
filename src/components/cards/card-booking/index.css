@@ -1,0 +1,39 @@
+.container-button-booking {
+  margin: 0px 16px 16px 16px;
+}
+
+.button-booking {
+  margin-top: 16px;
+}
+
+.container-user {
+  display: flex;
+  gap: 8px;
+  margin: 16px 8px 16px 8px;
+}
+.container-user img {
+  margin-left: 8px;
+}
+
+.container-price {
+  display: flex;
+  justify-content: space-between;
+  margin: 0px 16px 0 16px;
+}
+
+.container-icons {
+  display: flex;
+}
+
+.icon-share-favorited {
+  margin: 16px 16px 8px 16px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.name-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
