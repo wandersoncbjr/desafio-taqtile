@@ -1,26 +1,33 @@
 import React from 'react';
 import './App.css';
-import { CardProperties } from './components/cards/cardProperties';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHeart } from '@fortawesome/free-regular-svg-icons';
-import img from './components/cards/cardProperties/Svg.svg';
+import { CardBooking } from './components/cards/card-booking';
+import img from './components/cards/card-booking/img.svg';
 
-const data = [
-  { category: 'bathroom', detail: '3 quartos' },
-  { category: 'room', detail: '2 banheiros' },
-  { category: 'square-meter', detail: '5x7 m²' },
-];
+const data = {
+  priceCondominium: '1000',
+  priceIptu: '1000',
+  priceServiceFee: '1000',
+  priceGrossRent: '1000',
+  total: '2900',
+};
 
 function App() {
   return (
     <div className="App">
-      <CardProperties
-        img={<img src={img} />}
-        data={data}
-        icon={<FontAwesomeIcon icon={faHeart} />}
-        price={20000.01}
-        title="Alphaville, SP"
-        description="Barueri, 32394, São Paulo"
+      <CardBooking
+        image={<img src={img} />}
+        prices={data}
+        nameUser="Jonathan Marques"
+        broker="Imobilar Corretora Imobiliária"
+        type="rent"
+      />
+
+      <CardBooking
+        image={<img src={img} />}
+        prices={data}
+        nameUser="Jonathan Marques"
+        broker="Imobilar Corretora Imobiliária"
+        type="sell"
       />
     </div>
   );
