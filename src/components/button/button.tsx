@@ -13,7 +13,7 @@ const stylesButton = {
   minWidth: '143px',
   fontFamily: constants.font.family.primary,
   fontWeight: constants.font.weight.bold,
-  borderRadius: constants.font.radius,
+  borderRadius: constants.font.MediumRadius,
   cursor: 'pointer',
   display: 'flex',
   justifyContent: 'center',
@@ -26,10 +26,11 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'CTA';
   icon?: React.ReactNode;
   children?: ReactNode;
+  expanded?: boolean;
   onClick?: () => void;
 }
 
-export function ButtonPrimary({ compact, disabled, variant, children, icon, onClick }: ButtonProps) {
+export function ButtonPrimary({ compact, disabled, variant, children, icon, expanded, onClick }: ButtonProps) {
   const [hoveractive, setHoveractive] = useState(false);
 
   const mouseEnter = () => {
@@ -59,6 +60,7 @@ export function ButtonPrimary({ compact, disabled, variant, children, icon, onCl
   color = variant === 'secondary' ? colors.Accessory1 : colors.Neutral;
 
   const styles = {
+    width: expanded ? '100%' : '',
     ...stylesButton,
     backgroundColor,
     boxShadow,
