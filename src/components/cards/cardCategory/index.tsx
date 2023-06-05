@@ -1,13 +1,13 @@
 import { BodySecondary } from '../../typography/body/body2';
-import { Heading3 } from '../../typography/headline/h3';
+import { H3 } from '../../typography/headline/h3';
 import React from 'react';
 import './index.css';
 import { ContainerCard } from '../containerCard';
 
 interface CardProps {
   image?: React.ReactNode;
-  title?: string;
-  description?: string;
+  title: string;
+  description: string;
 }
 
 export function CardCategory({ image, title, description }: CardProps) {
@@ -15,7 +15,7 @@ export function CardCategory({ image, title, description }: CardProps) {
     <ContainerCard>
       {image}
       <div className="title-description">
-        <Heading3>{title}</Heading3>
+        <H3>{title}</H3>
         <BodySecondary type="regular">{description}</BodySecondary>
       </div>
     </ContainerCard>

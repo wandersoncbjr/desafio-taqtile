@@ -1,4 +1,3 @@
-import React from 'react';
 import { colors } from '../../typography/colors';
 import { Caption } from '../typography/caption/caption';
 import './index.css';

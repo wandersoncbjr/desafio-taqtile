@@ -1,0 +1,12 @@
+.container-badges {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 48px;
+}
+.icon-badge,
+.image-badge {
+  padding: 0 4px;
+}

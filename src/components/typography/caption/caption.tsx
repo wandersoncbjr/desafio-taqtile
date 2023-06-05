@@ -26,4 +26,18 @@ export function Caption({ children, color }: CaptionProps) {
   }
 
   return <p style={{ ...captionStyle, color: textColor }}>{children}</p>;
+  
+};
+
+export function Caption({ children, color }: CaptionProps) {
+  return (
+    <p
+      style={{
+        ...captionStyle,
+        color: color === 'black' ? colors.NeutralDark : colors.Neutral,
+      }}
+    >
+      {children}
+    </p>
+  );
 }
