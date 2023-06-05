@@ -1,4 +1,4 @@
-import { Body2 } from '../../typography/body/body2';
+import { BodySecondary } from '../../typography/body/body2';
 import { Heading3 } from '../../typography/headline/h3';
 import React from 'react';
 import './index.css';
@@ -16,7 +16,7 @@ export function CardCategory({ image, title, description }: CardProps) {
       {image}
       <div className="title-description">
         <Heading3>{title}</Heading3>
-        <Body2 type="regular">{description}</Body2>
+        <BodySecondary type="regular">{description}</BodySecondary>
       </div>
     </ContainerCard>
   );
