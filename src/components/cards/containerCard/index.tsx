@@ -9,7 +9,7 @@ interface ContainerProps {
 
 export function ContainerCard({ children }: ContainerProps) {
   return (
-    <div className="container" style={{ boxShadow: colors.boxShadow, borderRadius: constants.font.radius }}>
+    <div className="container" style={{ boxShadow: colors.boxShadow, borderRadius: constants.font.SmallRadius }}>
       {children}
     </div>
   );
