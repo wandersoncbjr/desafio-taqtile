@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ButtonPrimary } from '../../button/button';
 import { BodySecondary } from '../../typography/body/body2';
 import { Caption } from '../../typography/caption/caption';
@@ -10,64 +10,70 @@ import './index.css';
 import { colors } from '../../../typography/colors';
 import { constants } from '../../../typography';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleCheck, faHeart } from '@fortawesome/free-regular-svg-icons';
-import { faShare } from '@fortawesome/free-solid-svg-icons';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCircleCheck, faHeart as heartRegular } from '@fortawesome/free-regular-svg-icons';
+import { faShare, faHeart as heartSolid } from '@fortawesome/free-solid-svg-icons';
 import { H3 } from '../../typography/headline/h3';
+import { formatPrice } from '../../../price-formatter';
+import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+
+library.add(heartRegular, heartSolid);
 
 interface DataProps {
-  priceCondominium: string;
-  priceIptu?: string;
-  priceServiceFee?: string;
-  priceGrossRent?: string;
-  pricetotal?: string;
+  pricetotal?: number;
+  priceCondominium: number;
+  priceIptu?: number;
+  priceServiceFee?: number;
+  priceGrossRent?: number;
 }
 
 interface BookingProps {
   nameUser: string;
-  image: React.ReactNode;
+  imageUser: React.ReactNode;
   prices: DataProps;
   broker: string;
+  checked: boolean;
   type?: 'sell' | 'rent';
 }
-export function CardBooking({ image, prices, nameUser, broker, type }: BookingProps) {
+
+export function CardBooking({ imageUser, prices, nameUser, broker, type, checked }: BookingProps) {
+  const [favorite, setFavorite] = useState<boolean>(false);
+  const pricetotal = formatPrice(prices.pricetotal || 0);
+  const priceCondominium = formatPrice(prices.priceCondominium || 0);
+  const priceIptu = formatPrice(prices.priceIptu || 0);
+  const priceServiceFee = formatPrice(prices.priceServiceFee || 0);
+  const priceGrossRent = formatPrice(prices.priceGrossRent || 0);
   return (
     <ContainerCard>
       <div style={{ marginLeft: '16px' }}>
-        <Price type="big">R$250.000</Price>
+        <Price type="big">{pricetotal}</Price>
       </div>
       <Divider />
-
       <div className="container-price">
         <BodySecondary type="bold">Condomínio</BodySecondary>
-        <Price type="small">R${prices.priceCondominium}</Price>
+        <Price type="small">{priceCondominium}</Price>
       </div>
       <div className="container-price">
         <BodySecondary type="bold">IPTU</BodySecondary>
-        <Price type="small">R${prices.priceIptu}</Price>
+        <Price type="small">{priceIptu}</Price>
       </div>
       {type === 'sell' && (
         <>
           <div className="container-price">
             <BodySecondary type="bold">Taxa de serviços</BodySecondary>
-            <Price type="small">R${prices.priceServiceFee}</Price>
+            <Price type="small">{priceServiceFee}</Price>
           </div>
           <div className="container-price">
             <BodySecondary type="bold">Aluguel bruto</BodySecondary>
-            <Price type="small">R${prices.priceServiceFee}</Price>
+            <Price type="small">{priceGrossRent}</Price>
           </div>
-        </>
-      )}
-
-      {type === 'sell' && (
-        <>
           <Divider />
           <div className="container-price">
             <BodySecondary type="bold">Total</BodySecondary>
-            <Price type="small">R${prices.pricetotal}</Price>
+            <Price type="small">{pricetotal}</Price>
           </div>
         </>
       )}
-
       <div
         className="container-user"
         style={{
@@ -75,18 +81,23 @@ export function CardBooking({ image, prices, nameUser, broker, type }: BookingPr
           borderRadius: constants.font.SmallRadius,
         }}
       >
-        {image}
+        {imageUser}
         <div className="name-broker">
           <div className="name-icon">
             <Label type="bold">{nameUser}</Label>
-            <FontAwesomeIcon icon={faCircleCheck} color={colors.FeedbackSuccess} />
+            {checked && <FontAwesomeIcon icon={faCircleCheck} color={colors.FeedbackSuccess} />}
           </div>
           <Caption color="neutralXDark">{broker}</Caption>
         </div>
       </div>
 
       <div className="container-button-booking">
-        <ButtonPrimary variant="CTA" compact={true} expanded={true}>
+        <ButtonPrimary
+          variant="CTA"
+          compact={true}
+          expanded={true}
+          icon={<FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '24px' }} />}
+        >
           Falar com o corretor
         </ButtonPrimary>
         <div className="button-booking">
@@ -97,11 +108,21 @@ export function CardBooking({ image, prices, nameUser, broker, type }: BookingPr
         <div className="container-icons">
           <div className="icon-share-favorited">
             <FontAwesomeIcon icon={faShare} />
-            <H3>Favoritado</H3>
+            <H3>Compartilhar</H3>
           </div>
           <div className="icon-share-favorited">
-            <FontAwesomeIcon icon={faHeart} />
-            <H3>Compartilhar</H3>
+            <FontAwesomeIcon
+              icon={favorite ? heartSolid : heartRegular}
+              color={favorite ? 'red' : ''}
+              onClick={() => {
+                if (favorite) {
+                  setFavorite(false);
+                } else {
+                  setFavorite(true);
+                }
+              }}
+            />
+            <H3>{favorite ? 'Favoritado' : 'Favoritar'}</H3>
           </div>
         </div>
       </div>
