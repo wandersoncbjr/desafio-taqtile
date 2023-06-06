@@ -2,7 +2,7 @@ import { BodySecondary } from '../../typography/body/body2';
 import { H3 } from '../../typography/headline/h3';
 import React from 'react';
 import './index.css';
-import { ContainerCard } from '../containerCard';
+import { ContainerCard } from '../card-container';
 
 interface CardProps {
   image?: React.ReactNode;

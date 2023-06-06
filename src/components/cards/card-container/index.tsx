@@ -1,7 +1,7 @@
 import React from 'react';
 import './index.css';
 import { colors } from '../../../typography/colors';
-import { constants } from '../../../typography/';
+import { constants } from '../../../typography';
 
 interface ContainerProps {
   children: React.ReactNode;

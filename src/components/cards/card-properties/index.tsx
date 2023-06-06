@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faToilet, faRulerCombined } from '@fortawesome/free-solid-svg-icons';
-import { ContainerCard } from '../containerCard';
+import { ContainerCard } from '../card-container';
 import { colors } from '../../../typography/colors';
 import { Price } from '../../typography/price/price';
 import { BodySecondary } from '../../typography/body/body2';
