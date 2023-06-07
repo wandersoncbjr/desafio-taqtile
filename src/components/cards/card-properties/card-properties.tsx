@@ -6,7 +6,7 @@ import { colors } from '../../../typography/colors';
 import { Price } from '../../typography/price/price';
 import { BodySecondary } from '../../typography/body/body-secondary';
 import { Caption } from '../../typography/caption/caption';
-import './index.css';
+import './card-properties.css';
 import { Divider } from '../divider/divider';
 import { formatPrice } from '../../../price-formatter';
 

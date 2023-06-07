@@ -1,7 +1,7 @@
 import { BodySecondary } from '../../typography/body/body-secondary';
 import { H3 } from '../../typography/headline/h3';
 import React from 'react';
-import './index.css';
+import './card-category.css';
 import { ContainerCard } from '../card-container/card-container';
 
 interface CardProps {
