@@ -9,7 +9,7 @@
 .container-user {
   display: flex;
   gap: 8px;
-  margin: 16px 16px 16px 16px;
+  margin: 16px;
 }
 .container-user img {
   margin-left: 8px;
