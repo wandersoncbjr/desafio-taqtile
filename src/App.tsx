@@ -20,11 +20,11 @@ function App() {
         nameUser="Jonathan Marques"
         broker="Imobilar Corretora Imobiliária"
         type="rent"
-        checked={false}
+        checkedUser={false}
       />
 
       <CardBooking
-        checked={true}
+        checkedUser={true}
         imageUser={<img src={imageUser} />}
         prices={data}
         nameUser="Jonathan Marques"
