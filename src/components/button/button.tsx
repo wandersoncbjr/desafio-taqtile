@@ -9,8 +9,7 @@ export const constantsButton = {
 };
 
 const stylesButton = {
-  padding: '16px',
-  minWidth: '143px',
+  padding: '0px 16px 0px 16px',
   fontFamily: constants.font.family.primary,
   fontWeight: constants.font.weight.bold,
   borderRadius: constants.font.MediumRadius,
@@ -30,7 +29,7 @@ interface ButtonProps {
   onClick?: () => void;
 }
 
-export function ButtonPrimary({ compact, disabled, variant, children, icon, expanded, onClick }: ButtonProps) {
+export function Button({ compact, disabled, variant, children, icon, expanded, onClick }: ButtonProps) {
   const [hoveractive, setHoveractive] = useState(false);
 
   const mouseEnter = () => {

@@ -2,14 +2,6 @@
   display: flex;
   flex-direction: column;
   cursor: pointer;
+  overflow: auto;
 }
 
-.container img {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
-
-.container h3,
-p {
-  word-wrap: break-word;
-}
