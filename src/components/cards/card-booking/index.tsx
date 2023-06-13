@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ButtonPrimary } from '../../button/button';
+import { Button } from '../../button/button';
 import { BodySecondary } from '../../typography/body/body2';
 import { Caption } from '../../typography/caption/caption';
 import { Label } from '../../typography/label/label';
@@ -19,7 +19,7 @@ import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 
 library.add(heartRegular, heartSolid);
 
-interface DataProps {
+interface BookingPrices {
   pricetotal?: number;
   priceCondominium: number;
   priceIptu?: number;
@@ -30,48 +30,64 @@ interface DataProps {
 interface BookingProps {
   nameUser: string;
   imageUser: React.ReactNode;
-  prices: DataProps;
+  prices: BookingPrices;
   broker: string;
-  checked: boolean;
+  checkedUser: boolean;
   type?: 'sell' | 'rent';
 }
 
-export function CardBooking({ imageUser, prices, nameUser, broker, type, checked }: BookingProps) {
+export function CardBooking({ imageUser, prices, nameUser, broker, type, checkedUser: checked }: BookingProps) {
+  const pricetotal = prices.pricetotal ? formatPrice(prices.pricetotal) : null;
+  const priceCondominium = prices.priceCondominium ? formatPrice(prices.priceCondominium) : null;
+  const priceIptu = prices.priceIptu ? formatPrice(prices.priceIptu) : null;
+  const priceServiceFee = prices.priceServiceFee ? formatPrice(prices.priceServiceFee) : null;
+  const priceGrossRent = prices.priceGrossRent ? formatPrice(prices.priceGrossRent) : null;
   const [favorite, setFavorite] = useState<boolean>(false);
-  const pricetotal = formatPrice(prices.pricetotal || 0);
-  const priceCondominium = formatPrice(prices.priceCondominium || 0);
-  const priceIptu = formatPrice(prices.priceIptu || 0);
-  const priceServiceFee = formatPrice(prices.priceServiceFee || 0);
-  const priceGrossRent = formatPrice(prices.priceGrossRent || 0);
+  const handleFavoriteClick = () => {
+    setFavorite(!favorite);
+  };
+
   return (
-    <ContainerCard>
-      <div style={{ marginLeft: '16px' }}>
-        <Price type="big">{pricetotal}</Price>
-      </div>
+    <ContainerCard marginAll={true}>
+      {pricetotal && (
+        <div>
+          <Price type="big">{pricetotal}</Price>
+        </div>
+      )}
       <Divider />
-      <div className="container-price">
-        <BodySecondary type="bold">Condomínio</BodySecondary>
-        <Price type="small">{priceCondominium}</Price>
-      </div>
-      <div className="container-price">
-        <BodySecondary type="bold">IPTU</BodySecondary>
-        <Price type="small">{priceIptu}</Price>
-      </div>
+      {priceCondominium && (
+        <div className="container-price">
+          <BodySecondary type="bold">Condomínio</BodySecondary>
+          <Price type="small">{priceCondominium}</Price>
+        </div>
+      )}
+      {priceIptu && (
+        <div className="container-price">
+          <BodySecondary type="bold">IPTU</BodySecondary>
+          <Price type="small">{priceIptu}</Price>
+        </div>
+      )}
       {type === 'sell' && (
         <>
-          <div className="container-price">
-            <BodySecondary type="bold">Taxa de serviços</BodySecondary>
-            <Price type="small">{priceServiceFee}</Price>
-          </div>
-          <div className="container-price">
-            <BodySecondary type="bold">Aluguel bruto</BodySecondary>
-            <Price type="small">{priceGrossRent}</Price>
-          </div>
+          {priceServiceFee && (
+            <div className="container-price">
+              <BodySecondary type="bold">Taxa de serviços</BodySecondary>
+              <Price type="small">{priceServiceFee}</Price>
+            </div>
+          )}
+          {priceGrossRent && (
+            <div className="container-price">
+              <BodySecondary type="bold">Aluguel bruto</BodySecondary>
+              <Price type="small">{priceGrossRent}</Price>
+            </div>
+          )}
           <Divider />
-          <div className="container-price">
-            <BodySecondary type="bold">Total</BodySecondary>
-            <Price type="small">{pricetotal}</Price>
-          </div>
+          {pricetotal && (
+            <div className="container-price">
+              <BodySecondary type="bold">Total</BodySecondary>
+              <Price type="small">{pricetotal}</Price>
+            </div>
+          )}
         </>
       )}
       <div
@@ -81,6 +97,7 @@ export function CardBooking({ imageUser, prices, nameUser, broker, type, checked
           borderRadius: constants.font.SmallRadius,
         }}
       >
+        <div style={{ marginLeft: '4px' }}></div>
         {imageUser}
         <div className="name-broker">
           <div className="name-icon">
@@ -90,39 +107,34 @@ export function CardBooking({ imageUser, prices, nameUser, broker, type, checked
           <Caption color="neutralXDark">{broker}</Caption>
         </div>
       </div>
-
-      <div className="container-button-booking">
-        <ButtonPrimary
+      <div style={{ marginTop: '16px' }}></div>
+      <div>
+        <Button
           variant="CTA"
           compact={true}
           expanded={true}
           icon={<FontAwesomeIcon icon={faWhatsapp} style={{ fontSize: '24px' }} />}
         >
           Falar com o corretor
-        </ButtonPrimary>
-        <div className="button-booking">
-          <ButtonPrimary compact={true} expanded={true}>
-            Agendar visita
-          </ButtonPrimary>
-        </div>
+        </Button>
+        <div style={{ marginTop: '8px' }}></div>
+        <Button compact={true} expanded={true}>
+          Agendar visita
+        </Button>
         <div className="container-icons">
-          <div className="icon-share-favorited">
-            <FontAwesomeIcon icon={faShare} />
-            <H3>Compartilhar</H3>
-          </div>
           <div className="icon-share-favorited">
             <FontAwesomeIcon
               icon={favorite ? heartSolid : heartRegular}
               color={favorite ? 'red' : ''}
               onClick={() => {
-                if (favorite) {
-                  setFavorite(false);
-                } else {
-                  setFavorite(true);
-                }
+                handleFavoriteClick();
               }}
             />
             <H3>{favorite ? 'Favoritado' : 'Favoritar'}</H3>
+          </div>
+          <div className="icon-share-favorited">
+            <FontAwesomeIcon icon={faShare} />
+            <H3>Compartilhar</H3>
           </div>
         </div>
       </div>
