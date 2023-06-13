@@ -5,12 +5,13 @@ import { constants } from '../../../typography/';
 
 interface ContainerProps {
   children: React.ReactNode;
+  marginAll?: boolean;
 }
 
-export function ContainerCard({ children }: ContainerProps) {
+export function ContainerCard({ children, marginAll }: ContainerProps) {
   return (
     <div className="container" style={{ boxShadow: colors.boxShadow, borderRadius: constants.font.SmallRadius }}>
-      {children}
+      <div style={{ margin: marginAll ? '16px' : '' }}>{children}</div>
     </div>
   );
 }
