@@ -2,14 +2,15 @@ import './carousel.css';
 import React, { ReactNode } from 'react';
 
 interface CarouselProps {
-  items: ReactNode[];
+  children: ReactNode[];
 }
 
-export function Carrousel({ items }: CarouselProps) {
+export function Carrousel({ children }: CarouselProps) {
+  console.log(children);
   return (
     <div className="carrossel">
       <div className="carrossel-container">
-        {items.map((item, index) => (
+        {children.map((item, index) => (
           <div key={index}>{item}</div>
         ))}
       </div>
