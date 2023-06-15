@@ -1,6 +1,8 @@
 import React, { ReactNode, useState } from 'react';
 import { constants } from '../../typography';
 import { colors } from '../../typography/colors';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export const constantsButton = {
   defaultCompactHeight: '40px',
@@ -23,7 +25,7 @@ interface ButtonProps {
   compact?: boolean;
   disabled?: boolean;
   variant?: 'primary' | 'secondary' | 'CTA';
-  icon?: React.ReactNode;
+  icon?: IconDefinition;
   children?: ReactNode;
   expanded?: boolean;
   onClick?: () => void;
@@ -70,7 +72,11 @@ export function Button({ compact, disabled, variant, children, icon, expanded, o
 
   return (
     <button onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onClick={onClick} style={styles} disabled={disabled}>
-      {!!icon && <span style={{ marginRight: '8px' }}>{icon}</span>}
+      {!!icon && (
+        <span style={{ marginRight: '8px' }}>
+          <FontAwesomeIcon icon={icon} style={{ fontSize: '24px' }} />
+        </span>
+      )}
       {children}
     </button>
   );
