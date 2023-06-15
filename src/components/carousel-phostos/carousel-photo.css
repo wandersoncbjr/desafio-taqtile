@@ -1,0 +1,17 @@
+.carousel-item img {
+  width: 97%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.react-multi-carousel-list button {
+  background-color: #fdfdfd;
+}
+
+.react-multiple-carousel__arrow::before {
+  color: #2e9ca3;
+}
+
+.react-multi-carousel-list button:hover {
+  background-color: #fdfdfd;
+}
