@@ -6,7 +6,6 @@ interface CarouselProps {
 }
 
 export function Carrousel({ children }: CarouselProps) {
-  console.log(children);
   return (
     <div className="carrossel">
       <div className="carrossel-container">
