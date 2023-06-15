@@ -1,5 +1,5 @@
 import { Heading4 } from '../typography/headline/h4';
-import './index.css';
+import './items-card.css';
 import React from 'react';
 
 interface PropsItemsCard {

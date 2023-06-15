@@ -1,13 +1,13 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faToilet, faRulerCombined } from '@fortawesome/free-solid-svg-icons';
-import { ContainerCard } from '../containerCard';
+import { ContainerCard } from '../card-container/card-container';
 import { colors } from '../../../typography/colors';
 import { Price } from '../../typography/price/price';
-import { BodySecondary } from '../../typography/body/body2';
+import { BodySecondary } from '../../typography/body/body-secondary';
 import { Caption } from '../../typography/caption/caption';
-import './index.css';
-import { Divider } from '../divider';
+import './card-properties.css';
+import { Divider } from '../divider/divider';
 import { formatPrice } from '../../../price-formatter';
 
 interface DataProps {

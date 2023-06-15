@@ -1,6 +1,6 @@
 import { colors } from '../../typography/colors';
 import { Caption } from '../typography/caption/caption';
-import './index.css';
+import './badges.css';
 import { ReactNode, useState } from 'react';
 
 export interface BadgeProps {

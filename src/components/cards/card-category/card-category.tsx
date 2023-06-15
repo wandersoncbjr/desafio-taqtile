@@ -1,8 +1,8 @@
-import { BodySecondary } from '../../typography/body/body2';
+import { BodySecondary } from '../../typography/body/body-secondary';
 import { H3 } from '../../typography/headline/h3';
 import React from 'react';
-import './index.css';
-import { ContainerCard } from '../containerCard';
+import './card-category.css';
+import { ContainerCard } from '../card-container/card-container';
 
 interface CardProps {
   image?: React.ReactNode;
