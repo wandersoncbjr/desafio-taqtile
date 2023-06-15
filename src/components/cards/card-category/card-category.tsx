@@ -5,7 +5,7 @@ import './card-category.css';
 import { ContainerCard } from '../card-container/card-container';
 
 interface CardProps {
-  image?: React.ReactNode;
+  image?: string;
   title: string;
   description: string;
 }
@@ -13,7 +13,7 @@ interface CardProps {
 export function CardCategory({ image, title, description }: CardProps) {
   return (
     <ContainerCard>
-      {image}
+      <img src={image} />
       <div className="title-description">
         <H3>{title}</H3>
         <BodySecondary type="regular">{description}</BodySecondary>
