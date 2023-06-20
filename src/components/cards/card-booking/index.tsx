@@ -48,7 +48,7 @@ export function CardBooking({ imageUser, prices, nameUser, broker, type, checked
   };
 
   return (
-    <ContainerCard marginAll={true}>
+    <ContainerCard marginAll>
       {pricetotal && (
         <div>
           <Price type="big">{pricetotal}</Price>
