@@ -42,7 +42,7 @@ export function CardBooking({ imageUser, prices, nameUser, broker, type, checked
   const priceIptu = prices.priceIptu && formatPrice(prices.priceIptu);
   const priceServiceFee = prices.priceServiceFee && formatPrice(prices.priceServiceFee);
   const priceGrossRent = prices.priceGrossRent && formatPrice(prices.priceGrossRent);
-  const [favorite, setFavorite] = useState<boolean>(false);
+  const [favorite, setFavorite] = useState(false);
   const handleFavoriteClick = () => {
     setFavorite(!favorite);
   };
