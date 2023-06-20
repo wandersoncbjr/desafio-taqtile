@@ -109,7 +109,7 @@ export function CardBooking({ imageUser, prices, nameUser, broker, type, checked
       </div>
       <div style={{ marginTop: '16px' }}></div>
       <div>
-        <Button variant="CTA" compact={true} expanded={true} icon={faWhatsapp}>
+        <Button variant="CTA" compact expanded icon={faWhatsapp}>
           Falar com o corretor
         </Button>
         <div style={{ marginTop: '8px' }}></div>
