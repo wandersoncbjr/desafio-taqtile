@@ -32,7 +32,7 @@ interface BookingProps {
   imageUser: React.ReactNode;
   prices: BookingPrices;
   broker: string;
-  checkedUser: boolean;
+  checkedUser?: boolean;
   type?: 'sell' | 'rent';
 }
 
