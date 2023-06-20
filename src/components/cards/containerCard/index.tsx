@@ -11,7 +11,7 @@ interface ContainerProps {
 export function ContainerCard({ children, marginAll }: ContainerProps) {
   return (
     <div className="container" style={{ boxShadow: colors.boxShadow, borderRadius: constants.font.SmallRadius }}>
-      <div style={{ margin: marginAll ? '16px' : '' }}>{children}</div>
+      <div style={{ margin: marginAll && '16px' }}>{children}</div>
     </div>
   );
 }
