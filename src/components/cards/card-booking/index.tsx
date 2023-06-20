@@ -37,11 +37,11 @@ interface BookingProps {
 }
 
 export function CardBooking({ imageUser, prices, nameUser, broker, type, checkedUser: checked }: BookingProps) {
-  const pricetotal = prices.pricetotal ? formatPrice(prices.pricetotal) : null;
-  const priceCondominium = prices.priceCondominium ? formatPrice(prices.priceCondominium) : null;
-  const priceIptu = prices.priceIptu ? formatPrice(prices.priceIptu) : null;
-  const priceServiceFee = prices.priceServiceFee ? formatPrice(prices.priceServiceFee) : null;
-  const priceGrossRent = prices.priceGrossRent ? formatPrice(prices.priceGrossRent) : null;
+  const pricetotal = prices.pricetotal && formatPrice(prices.pricetotal);
+  const priceCondominium = prices.priceCondominium && formatPrice(prices.priceCondominium);
+  const priceIptu = prices.priceIptu && formatPrice(prices.priceIptu);
+  const priceServiceFee = prices.priceServiceFee && formatPrice(prices.priceServiceFee);
+  const priceGrossRent = prices.priceGrossRent && formatPrice(prices.priceGrossRent);
   const [favorite, setFavorite] = useState<boolean>(false);
   const handleFavoriteClick = () => {
     setFavorite(!favorite);
