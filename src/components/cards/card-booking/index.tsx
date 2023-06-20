@@ -113,7 +113,7 @@ export function CardBooking({ imageUser, prices, nameUser, broker, type, checked
           Falar com o corretor
         </Button>
         <div style={{ marginTop: '8px' }}></div>
-        <Button compact={true} expanded={true}>
+        <Button compact expanded>
           Agendar visita
         </Button>
         <div className="container-icons">
