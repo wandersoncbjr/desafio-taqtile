@@ -1,0 +1,29 @@
+.container-user {
+  display: flex;
+  gap: 8px;
+  margin: 16px 0px 8px 0px;
+}
+
+.container-price {
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.icon-share-favorited {
+  margin: 8px;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.name-icon {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

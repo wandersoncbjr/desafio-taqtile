@@ -1,6 +1,8 @@
 import React, { ReactNode, useState } from 'react';
 import { constants } from '../../typography';
 import { colors } from '../../typography/colors';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 
 export const constantsButton = {
   defaultCompactHeight: '40px',
@@ -9,11 +11,10 @@ export const constantsButton = {
 };
 
 const stylesButton = {
-  padding: '16px',
-  minWidth: '143px',
+  padding: '0px 16px 0px 16px',
   fontFamily: constants.font.family.primary,
   fontWeight: constants.font.weight.bold,
-  borderRadius: constants.font.radius,
+  borderRadius: constants.font.MediumRadius,
   cursor: 'pointer',
   display: 'flex',
   justifyContent: 'center',
@@ -24,12 +25,13 @@ interface ButtonProps {
   compact?: boolean;
   disabled?: boolean;
   variant?: 'primary' | 'secondary' | 'CTA';
-  icon?: React.ReactNode;
+  icon?: IconDefinition;
   children?: ReactNode;
+  expanded?: boolean;
   onClick?: () => void;
 }
 
-export function ButtonPrimary({ compact, disabled, variant, children, icon, onClick }: ButtonProps) {
+export function Button({ compact, disabled, variant, children, icon, expanded, onClick }: ButtonProps) {
   const [hoveractive, setHoveractive] = useState(false);
 
   const mouseEnter = () => {
@@ -59,6 +61,7 @@ export function ButtonPrimary({ compact, disabled, variant, children, icon, onCl
   color = variant === 'secondary' ? colors.Accessory1 : colors.Neutral;
 
   const styles = {
+    width: expanded ? '100%' : '',
     ...stylesButton,
     backgroundColor,
     boxShadow,
@@ -69,7 +72,11 @@ export function ButtonPrimary({ compact, disabled, variant, children, icon, onCl
 
   return (
     <button onMouseEnter={mouseEnter} onMouseLeave={mouseLeave} onClick={onClick} style={styles} disabled={disabled}>
-      {!!icon && <span style={{ marginRight: '8px' }}>{icon}</span>}
+      {!!icon && (
+        <span style={{ marginRight: '8px' }}>
+          <FontAwesomeIcon icon={icon} style={{ fontSize: '24px' }} />
+        </span>
+      )}
       {children}
     </button>
   );
