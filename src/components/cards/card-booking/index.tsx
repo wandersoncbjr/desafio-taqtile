@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from '../../button/button';
-import { BodySecondary } from '../../typography/body/body2';
+import { BodySecondary } from '../../typography/body/body-secondary';
 import { Caption } from '../../typography/caption/caption';
 import { Label } from '../../typography/label/label';
 import { Price } from '../../typography/price/price';
-import { ContainerCard } from '../containerCard';
-import { Divider } from '../divider';
+import { ContainerCard } from '../card-container/card-container';
+import { Divider } from '../divider/divider';
 import './index.css';
 import { colors } from '../../../typography/colors';
 import { constants } from '../../../typography';
