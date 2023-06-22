@@ -189,16 +189,7 @@ const propertyData = [
 ];
 
 export function App() {
-  return (
-    <div className="App">
-<<<<<<< HEAD
-      <Hero />
-=======
-      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} cardsData={categoryData} />
-      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} cardsData={propertyData} />
->>>>>>> 7b7e3cc (feat: add component CarouselSection)
-    </div>
-  );
+  return <div className="App"></div>;
 }
 
 export default App;
