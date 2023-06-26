@@ -7,7 +7,7 @@ interface CarouselSectionData {
   type: string;
   name: string;
   imageUrl: string;
-  dataproperty?: { category: string; detail: string }[];
+  dataProperty?: { category: string; detail: string }[];
   numberOfProperties: number;
 }
 
@@ -17,7 +17,7 @@ interface CardCarouselSectionProps {
 }
 
 export function CarouselSection({ title, cardsData }: CardCarouselSectionProps) {
-  const renderCard = ({ type, name, imageUrl, dataproperty, numberOfProperties }: CarouselSectionData) => {
+  const renderCard = ({ type, name, imageUrl, dataProperty, numberOfProperties }: CarouselSectionData) => {
     if (type === 'category') {
       return <CardCategory key={name} title={name} description={`${numberOfProperties} Imóveis`} image={imageUrl} />;
     } else {
@@ -28,7 +28,7 @@ export function CarouselSection({ title, cardsData }: CardCarouselSectionProps) 
           price={numberOfProperties}
           title={name}
           description="A spacious and modern house in a quiet neighborhood."
-          data={dataproperty || undefined}
+          data={dataProperty}
         />
       );
     }
