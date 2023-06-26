@@ -1,11 +1,22 @@
 import React from 'react';
 import './App.css';
-import { Hero } from './components/hero/hero';
+import { CarouselPhotos } from './components/carousel-phostos/carousel-photo';
+import carouselPhotofrom from './components/carousel-phostos/carousel-photo.svg';
 
 export function App() {
   return (
-    <div className="App">
-      <Hero />
+    <div>
+      <CarouselPhotos>
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+        <img src={carouselPhotofrom} />
+      </CarouselPhotos>
     </div>
   );
 }
