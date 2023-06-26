@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBed, faToilet, faRulerCombined } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { ContainerCard } from '../card-container/card-container';
 import { colors } from '../../../typography/colors';
 import { Price } from '../../typography/price/price';
@@ -20,7 +21,6 @@ interface ContainerProps {
   price: number;
   title: string;
   description: string;
-  icon: React.ReactNode;
   data?: DataProps[];
 }
 
@@ -33,7 +33,7 @@ const renderIcon = (category: string): React.ReactNode => {
 
   return categoryIconMapper[category];
 };
-export function CardProperties({ img, price, title, description, icon, data }: ContainerProps) {
+export function CardProperties({ img, price, title, description, data }: ContainerProps) {
   const formattedPrice = formatPrice(price);
   return (
     <ContainerCard>
@@ -41,7 +41,7 @@ export function CardProperties({ img, price, title, description, icon, data }: C
       <div className="container-content">
         <div className="container-price-icon">
           <Price type="medium">{`${formattedPrice}`}</Price>
-          {icon}
+          <FontAwesomeIcon icon={faHeart} />
         </div>
         <BodySecondary type="bold">{title}</BodySecondary>
         <Caption color="neutralXDark">{description}</Caption>

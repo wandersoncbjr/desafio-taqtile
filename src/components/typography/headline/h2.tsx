@@ -7,7 +7,7 @@ const h2Style = {
   fontWeight: constants.font.weight.regular,
   fontSize: constants.font.size.xxLarge,
   lineHeight: constants.font.lineHeight.small,
-  color: colors.PrimaryDark,
+  color: colors.NeutralXdark,
 };
 
 export function Heading2({ children }: { children: ReactNode }) {
