@@ -1,0 +1,21 @@
+footer {
+  background-color: #031f3d;
+  width: 100vw;
+}
+
+.container-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.container-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.company-info {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
