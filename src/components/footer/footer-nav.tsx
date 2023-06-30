@@ -19,7 +19,7 @@ export function FooterNav({ title, dataFooter }: FooterNavProps) {
         {dataFooter.map((link, index) => (
           <li key={index}>
             <a href={link.redirect} style={{ textDecoration: 'none' }}>
-              <BodySecondary>{link.content}</BodySecondary>
+              <BodySecondary color="Neutral">{link.content}</BodySecondary>
             </a>
           </li>
         ))}
