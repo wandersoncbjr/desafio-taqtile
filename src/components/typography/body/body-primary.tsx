@@ -3,9 +3,10 @@ import { constants } from '../../../typography';
 import { colors } from '../../../typography/colors';
 
 interface BodyProps {
-  color?: 'neutral';
+  color?: 'neutral' | 'dark';
   children: ReactNode;
 }
+
 const bodyStyle = {
   fontFamily: constants.font.family.primary,
   fontWeight: constants.font.weight.regular,
