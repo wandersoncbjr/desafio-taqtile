@@ -12,7 +12,7 @@ const h3Style = {
 };
 
 interface H3Props {
-  color?: 'neutral';
+  color?: 'neutral' | 'NeutralXdark';
   children: ReactNode;
 }
 
