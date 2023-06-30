@@ -13,11 +13,13 @@ const baseTypography = {
 interface BodyProps {
   type?: 'regular' | 'bold' | 'scratched';
   children?: ReactNode;
+  color?: 'NeutralXdark' | 'Neutral';
 }
 
-export function BodySecondary({ type = 'regular', children }: BodyProps) {
+export function BodySecondary({ type = 'regular', children, color }: BodyProps) {
   const style = {
     ...baseTypography,
+    color: color === 'Neutral' ? colors.Neutral : colors.NeutralXdark,
     fontWeight: type === 'bold' ? constants.font.weight.bold : constants.font.weight.regular,
     textDecorationLine: type === 'scratched' ? constants.font.textDecoration.textDecorationLine : undefined,
   };
