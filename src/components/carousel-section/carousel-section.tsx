@@ -1,28 +1,9 @@
 import React from 'react';
-import { gql, useQuery } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { Heading2 } from '../typography/headline/h2';
 import { CardCategory } from '../cards/card-category/card-category';
 import { Carrousel } from '../carousel-properties/carousel';
-
-const GET_CATEGORIES = gql`
-  query categoriesProperties {
-    categories {
-      imageUrl
-      name
-      numberOfProperties
-    }
-  }
-`;
-
-interface Category {
-  imageUrl: string;
-  name: string;
-  numberOfProperties: number;
-}
-
-interface QueryResult {
-  categories: Category[] | undefined;
-}
+import { GET_CATEGORIES, QueryResult, Category } from '../../graphql/queries/categories';
 
 interface CardCarouselSectionProps {
   title: string;
