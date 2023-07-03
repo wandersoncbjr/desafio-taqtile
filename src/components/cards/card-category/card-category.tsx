@@ -7,16 +7,16 @@ import { ContainerCard } from '../card-container/card-container';
 interface CardProps {
   image?: string;
   title: string;
-  description: string;
+  numberOfProperties: number;
 }
 
-export function CardCategory({ image, title, description }: CardProps) {
+export function CardCategory({ image, title, numberOfProperties }: CardProps) {
   return (
     <ContainerCard>
       <img src={image} />
       <div className="title-description">
         <H3>{title}</H3>
-        <BodySecondary type="regular">{description}</BodySecondary>
+        <BodySecondary type="regular">{numberOfProperties} Imóveis </BodySecondary>
       </div>
     </ContainerCard>
   );
