@@ -17,5 +17,5 @@ export interface Category {
 }
 
 export interface QueryResult {
-  categories: Category[] | undefined;
+  categories?: Category[];
 }
