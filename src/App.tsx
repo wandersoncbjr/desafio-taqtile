@@ -12,7 +12,7 @@ export function App() {
       <Hero />
       <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} type="category" />
       <Banner />
-      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} type="property" />
+      <CarouselSection title={'Lançamentos que você pode se interessar!'} type="property" />
     </div>
   );
 }
