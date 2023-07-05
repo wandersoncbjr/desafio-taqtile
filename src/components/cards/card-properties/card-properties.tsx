@@ -12,32 +12,32 @@ import { Divider } from '../divider/divider';
 import { formatPrice } from '../../../price-formatter';
 
 interface DataProps {
-  category: string;
+  property: string;
   detail: string;
 }
 
 interface ContainerProps {
-  img?: React.ReactNode;
+  img?: string;
   price: number;
   title: string;
   description: string;
   data?: DataProps[];
 }
 
-const renderIcon = (category: string): React.ReactNode => {
+const renderIcon = (property: string): React.ReactNode => {
   const categoryIconMapper: Record<string, React.ReactNode> = {
     bathroom: <FontAwesomeIcon color={colors.PrimaryDark} icon={faToilet} />,
-    room: <FontAwesomeIcon color={colors.PrimaryDark} icon={faBed} />,
+    bedrooms: <FontAwesomeIcon color={colors.PrimaryDark} icon={faBed} />,
     'square-meter': <FontAwesomeIcon color={colors.PrimaryDark} icon={faRulerCombined} />,
   };
 
-  return categoryIconMapper[category];
+  return categoryIconMapper[property];
 };
 export function CardProperties({ img, price, title, description, data }: ContainerProps) {
   const formattedPrice = formatPrice(price);
   return (
     <ContainerCard>
-      {img}
+      <img src={img} />
       <div className="container-content">
         <div className="container-price-icon">
           <Price type="medium">{`${formattedPrice}`}</Price>
@@ -51,7 +51,7 @@ export function CardProperties({ img, price, title, description, data }: Contain
         {data &&
           data.map((item, index) => (
             <div className="card-icon" key={index}>
-              {renderIcon(item.category)}
+              {renderIcon(item.property)}
               <Caption color="neutralXDark">{item.detail}</Caption>
             </div>
           ))}
