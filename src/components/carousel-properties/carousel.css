@@ -1,6 +1,5 @@
 .carrossel {
   overflow: auto;
-  width: 80%;
 }
 .carrossel-container {
   display: flex;

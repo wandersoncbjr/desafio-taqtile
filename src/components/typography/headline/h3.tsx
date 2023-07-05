@@ -7,10 +7,19 @@ const h3Style = {
   fontWeight: constants.font.weight.regular,
   fontSize: constants.font.size.xLarge,
   lineHeight: constants.font.lineHeight.small,
-  color: colors.NeutralXdark,
+
   margin: 0,
 };
 
-export function H3({ children }: { children: ReactNode }) {
-  return <h3 style={h3Style}>{children}</h3>;
+interface H3Props {
+  color?: 'neutral' | 'NeutralXdark';
+  children: ReactNode;
+}
+
+export function H3({ color, children }: H3Props) {
+  const style = {
+    ...h3Style,
+    color: color == 'neutral' ? colors.Neutral : colors.NeutralXdark,
+  };
+  return <h3 style={style}>{children}</h3>;
 }
