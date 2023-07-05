@@ -10,11 +10,9 @@ export function App() {
   return (
     <div>
       <Hero />
-      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} />
-      <Separator size="large" />
+      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} type="category" />
       <Banner />
-      <Separator size="large" />
-      <Footer />
+      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} type="property" />
     </div>
   );
 }
