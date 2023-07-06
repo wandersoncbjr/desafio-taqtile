@@ -1,0 +1,16 @@
+.container-header {
+  display: flex;
+  justify-content: space-around;
+  padding: 16px;
+  box-shadow: #f4f4f4 0px 2px 5px -1px, #f4f4f4 0px 1px 5px -1px;
+}
+
+.container-item-menu {
+  display: flex;
+  align-items: center;
+}
+
+.container-button {
+  display: flex;
+  align-items: center;
+}
