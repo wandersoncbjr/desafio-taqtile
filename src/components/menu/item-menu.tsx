@@ -1,7 +1,7 @@
 import { colors } from '../../typography/colors';
 import { Label } from '../typography/label/label';
 import { useState } from 'react';
-
+import './menu.css';
 interface ItemProps {
   title: string;
   redirect: string;
@@ -10,7 +10,7 @@ interface ItemProps {
 export function ItemMenu({ title, redirect }: ItemProps) {
   const [hover, setHover] = useState(false);
   return (
-    <div style={{ display: 'inline-block', cursor: 'pointer' }}>
+    <div style={{ display: 'inline-block' }} className="container-item">
       <a
         onMouseEnter={() => {
           setHover(true);
