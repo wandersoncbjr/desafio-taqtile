@@ -4,7 +4,7 @@ export const constants = {
       primary: 'Poppins',
     },
     lineHeight: {
-      small: '40px',
+      small: '28px',
       medium: '48px',
       large: '60px',
     },
