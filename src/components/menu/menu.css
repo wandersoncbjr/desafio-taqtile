@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.container-item,
+.container-item label,
 .container-button label {
   cursor: pointer;
 }
