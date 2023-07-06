@@ -22,11 +22,11 @@ export function Menu() {
           <ItemMenu redirect="/contato" title="Contato" />
         </div>
         <div className="container-button">
-          <Button variant="secondary" compact={true}>
+          <Button variant="secondary" compact>
             <Label type="regular">Logar</Label>
           </Button>
           <Separator size="small" />
-          <Button compact={true}>Cadastrar</Button>
+          <Button compact>Cadastrar</Button>
         </div>
       </div>
     </header>
