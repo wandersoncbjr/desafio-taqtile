@@ -10,39 +10,44 @@ import { Caption } from '../../typography/caption/caption';
 import './card-properties.css';
 import { Divider } from '../divider/divider';
 import { formatPrice } from '../../../price-formatter';
+import { Separator } from '../../separator/separatos';
 
 interface DataProps {
-  category: string;
+  property: string;
   detail: string;
 }
 
 interface ContainerProps {
-  img?: React.ReactNode;
+  img?: string;
   price: number;
   title: string;
   description: string;
   data?: DataProps[];
 }
 
-const renderIcon = (category: string): React.ReactNode => {
+const renderIcon = (property: string): React.ReactNode => {
   const categoryIconMapper: Record<string, React.ReactNode> = {
     bathroom: <FontAwesomeIcon color={colors.PrimaryDark} icon={faToilet} />,
-    room: <FontAwesomeIcon color={colors.PrimaryDark} icon={faBed} />,
+    bedrooms: <FontAwesomeIcon color={colors.PrimaryDark} icon={faBed} />,
     'square-meter': <FontAwesomeIcon color={colors.PrimaryDark} icon={faRulerCombined} />,
   };
 
-  return categoryIconMapper[category];
+  return categoryIconMapper[property];
 };
 export function CardProperties({ img, price, title, description, data }: ContainerProps) {
   const formattedPrice = formatPrice(price);
   return (
     <ContainerCard>
-      {img}
+      <div className="container-image">
+        <img src={img} />
+      </div>
       <div className="container-content">
+        <Separator size="medium" />
         <div className="container-price-icon">
           <Price type="medium">{`${formattedPrice}`}</Price>
           <FontAwesomeIcon icon={faHeart} />
         </div>
+        <Separator size="small" />
         <BodySecondary type="bold">{title}</BodySecondary>
         <Caption color="neutralXDark">{description}</Caption>
       </div>
@@ -51,7 +56,7 @@ export function CardProperties({ img, price, title, description, data }: Contain
         {data &&
           data.map((item, index) => (
             <div className="card-icon" key={index}>
-              {renderIcon(item.category)}
+              {renderIcon(item.property)}
               <Caption color="neutralXDark">{item.detail}</Caption>
             </div>
           ))}

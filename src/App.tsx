@@ -10,9 +10,10 @@ export function App() {
   return (
     <div>
       <Hero />
-      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} />
+      <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} type="category" />
       <Separator size="large" />
       <Banner />
+      <CarouselSection title={'Lançamentos que você pode se interessar!'} type="property" />
       <Separator size="large" />
       <Footer />
     </div>
