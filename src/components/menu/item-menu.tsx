@@ -1,13 +1,26 @@
+import { colors } from '../../typography/colors';
 import { Label } from '../typography/label/label';
+import { useState } from 'react';
 
-export function ItemMenu() {
+interface ItemProps {
+  title: string;
+  redirect: string;
+}
+
+export function ItemMenu({ title, redirect }: ItemProps) {
+  const [hover, setHover] = useState(false);
   return (
-    <div>
-      <Label type="bold">
-        <a href="/adwd" style={{ listStyle: 'none' }}>
-          Home
-        </a>
-      </Label>
+    <div style={{ display: 'inline-block', cursor: 'pointer' }}>
+      <a
+        onMouseEnter={() => {
+          setHover(true);
+        }}
+        onMouseLeave={() => setHover(false)}
+        href={redirect}
+        style={{ textDecoration: 'none', borderBottom: hover ? `5px solid ${colors.secondaryColor}` : 'none' }}
+      >
+        <Label type={hover ? 'bold' : 'semiBold'}>{title}</Label>
+      </a>
     </div>
   );
 }
