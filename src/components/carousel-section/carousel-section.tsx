@@ -174,7 +174,7 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
   const { data, error, loading } = useQuery<QueryResult>(GET_CATEGORIES);
 
   return (
-    <div style={{ paddingInline: '60px' }}>
+    <div style={{ paddingLeft: '60px' }}>
       <Heading2 key={title}>{title}</Heading2>
       {loading && 'Loading...'}
       {error && `Error: ${error.message}`}
