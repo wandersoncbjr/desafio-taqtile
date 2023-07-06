@@ -10,6 +10,7 @@ import { Caption } from '../../typography/caption/caption';
 import './card-properties.css';
 import { Divider } from '../divider/divider';
 import { formatPrice } from '../../../price-formatter';
+import { Separator } from '../../separator/separatos';
 
 interface DataProps {
   property: string;
@@ -41,10 +42,12 @@ export function CardProperties({ img, price, title, description, data }: Contain
         <img src={img} />
       </div>
       <div className="container-content">
+        <Separator size="medium" />
         <div className="container-price-icon">
           <Price type="medium">{`${formattedPrice}`}</Price>
           <FontAwesomeIcon icon={faHeart} />
         </div>
+        <Separator size="small" />
         <BodySecondary type="bold">{title}</BodySecondary>
         <Caption color="neutralXDark">{description}</Caption>
       </div>
