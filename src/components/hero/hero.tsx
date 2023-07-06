@@ -1,4 +1,5 @@
 import { Button } from '../button/button';
+import { Separator } from '../separator/separatos';
 import { Body1 } from '../typography/body/body-primary';
 import { Display } from '../typography/display/display';
 import heroPhoto from './hero-photo.svg';
@@ -16,6 +17,7 @@ export function Hero() {
         <div className="container-section-hero">
           <Display color="CTA">Encontre seu espaço no mundo!</Display>
           <Body1>Os melhores imóveis de acordo com as suas preferências.</Body1>
+          <Separator size="medium" />
           <div className="hero-button">
             <Button icon={faMagnifyingGlass} expanded onClick={handleSearchClick} compact={true}>
               Buscar
