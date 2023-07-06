@@ -20,7 +20,7 @@ export function Price({ type = 'small', children }: PriceProps) {
       type === 'big'
         ? constants.font.size.xxxLarge
         : type === 'medium'
-        ? constants.font.size.xxLarge
+        ? constants.font.size.xLarge
         : constants.font.size.medium,
     fontWeight: type === 'small' ? constants.font.weight.regular : constants.font.weight.bold,
     color: type === 'medium' ? colors.Accessory2 : colors.NeutralXdark,
