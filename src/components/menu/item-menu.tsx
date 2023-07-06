@@ -17,7 +17,7 @@ export function ItemMenu({ title, redirect }: ItemProps) {
         }}
         onMouseLeave={() => setHover(false)}
         href={redirect}
-        style={{ textDecoration: 'none', borderBottom: hover ? `5px solid ${colors.secondaryColor}` : 'none' }}
+        style={{ textDecoration: 'none', borderBottom: hover ? `5px solid ${colors.secondary}` : 'none' }}
       >
         <Label type={hover ? 'bold' : 'semiBold'}>{title}</Label>
       </a>
