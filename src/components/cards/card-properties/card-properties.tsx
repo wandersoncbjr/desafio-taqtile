@@ -37,7 +37,9 @@ export function CardProperties({ img, price, title, description, data }: Contain
   const formattedPrice = formatPrice(price);
   return (
     <ContainerCard>
-      <img src={img} />
+      <div className="container-image">
+        <img src={img} />
+      </div>
       <div className="container-content">
         <div className="container-price-icon">
           <Price type="medium">{`${formattedPrice}`}</Price>
