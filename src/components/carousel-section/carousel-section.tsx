@@ -13,19 +13,19 @@ interface CardCarouselSectionProps {
 }
 
 export function CarouselSection({ title, type }: CardCarouselSectionProps) {
-  const { data, error, loading } = useQuery<QueryResult>(GET_CATEGORIES);
+  const { data: data1, error: error1, loading: loading1 } = useQuery<QueryResult>(GET_CATEGORIES);
   const { data: data2, error: error2, loading: loading2 } = useQuery<QueryData>(GET_PROPERTIES);
 
   return (
     <div style={{ paddingLeft: '60px' }}>
       <Heading2 key={title}>{title}</Heading2>
-      {loading && 'Loading...'}
-      {error && `Error: ${error.message}`}
+      {loading1 && 'Loading...'}
+      {error1 && `Error: ${error1.message}`}
 
       {type === 'category' ? (
-        data?.categories && (
+        data1?.categories && (
           <Carrousel>
-            {data.categories.map((category: Category) => (
+            {data1.categories.map((category: Category) => (
               <CardCategory
                 key={category.name}
                 title={category.name}
