@@ -10,7 +10,7 @@ interface ItemProps {
 export function ItemMenu({ title, redirect }: ItemProps) {
   const [hover, setHover] = useState(false);
   return (
-    <div style={{ display: 'inline-block' }} className="container-item">
+    <div style={{ display: 'inline-block', marginInline: hover ? '0' : '0.32px' }} className="container-item">
       <a
         onMouseEnter={() => {
           setHover(true);
