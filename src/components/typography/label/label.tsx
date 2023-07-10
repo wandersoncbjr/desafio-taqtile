@@ -25,7 +25,7 @@ export function Label({ type = 'regular', children }: labelProps) {
         ? constants.font.weight.regular
         : constants.font.weight.regular,
     fontSize: type === 'neutral' ? constants.font.size.medium : constants.font.size.large,
-    color: type === 'neutral' ? colors.Neutral : colors.PrimaryXDark,
+    color: type === 'neutral' ? colors.Neutral : type === 'regular' ? colors.Accessory1 : colors.PrimaryXDark,
   };
 
   return <label style={style}>{children}</label>;
