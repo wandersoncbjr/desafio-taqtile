@@ -40,6 +40,6 @@ export interface Property {
   buyPrices: BuyPrices;
 }
 
-export interface QueryData {
+export interface RecentPropertiesResponse {
   recentProperties?: Property[];
 }

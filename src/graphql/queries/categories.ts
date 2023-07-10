@@ -16,6 +16,6 @@ export interface Category {
   numberOfProperties: number;
 }
 
-export interface QueryResult {
+export interface categoriesResponse {
   categories?: Category[];
 }

@@ -3,9 +3,9 @@ import { useQuery } from '@apollo/client';
 import { Heading2 } from '../typography/headline/h2';
 import { CardCategory } from '../cards/card-category/card-category';
 import { Carrousel } from '../carousel-properties/carousel';
-import { GET_CATEGORIES, QueryResult, Category } from '../../graphql/queries/categories';
+import { GET_CATEGORIES, categoriesResponse, Category } from '../../graphql/queries/categories';
 import { CardProperties } from '../cards/card-properties/card-properties';
-import { GET_PROPERTIES, QueryData, Property } from '../../graphql/queries/properties';
+import { GET_PROPERTIES, RecentPropertiesResponse, Property } from '../../graphql/queries/properties';
 
 interface CardCarouselSectionProps {
   title: string;
@@ -13,19 +13,27 @@ interface CardCarouselSectionProps {
 }
 
 export function CarouselSection({ title, type }: CardCarouselSectionProps) {
-  const { data: data1, error: error1, loading: loading1 } = useQuery<QueryResult>(GET_CATEGORIES);
-  const { data: data2, error: error2, loading: loading2 } = useQuery<QueryData>(GET_PROPERTIES);
+  const {
+    data: categoriesData,
+    error: categoriesError,
+    loading: categoriesLoading,
+  } = useQuery<categoriesResponse>(GET_CATEGORIES);
+  const {
+    data: recentPropertiesData,
+    error: recentPropertiesError,
+    loading: recentPropertiesLoading,
+  } = useQuery<RecentPropertiesResponse>(GET_PROPERTIES);
 
   return (
     <div style={{ paddingLeft: '60px' }}>
       <Heading2 key={title}>{title}</Heading2>
-      {loading1 && 'Loading...'}
-      {error1 && `Error: ${error1.message}`}
+      {categoriesLoading && 'Loading...'}
+      {categoriesError && `Error: ${categoriesError.message}`}
 
       {type === 'category' ? (
-        data1?.categories && (
+        categoriesData?.categories && (
           <Carrousel>
-            {data1.categories.map((category: Category) => (
+            {categoriesData.categories.map((category: Category) => (
               <CardCategory
                 key={category.name}
                 title={category.name}
@@ -37,11 +45,11 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
         )
       ) : (
         <>
-          {loading2 && 'Loading...'}
-          {error2 && `Error: ${error2.message}`}
-          {data2?.recentProperties && (
+          {recentPropertiesLoading && 'Loading...'}
+          {recentPropertiesError && `Error: ${recentPropertiesError.message}`}
+          {recentPropertiesData?.recentProperties && (
             <Carrousel>
-              {data2.recentProperties.map((property: Property) => (
+              {recentPropertiesData.recentProperties.map((property: Property) => (
                 <CardProperties
                   img={property.imageUrls[0]}
                   key={property.address.city}
