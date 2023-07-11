@@ -1,8 +1,8 @@
-import { Banner } from '../components/banner/banner';
-import { CarouselSection } from '../components/carousel-section/carousel-section';
-import { Footer } from '../components/footer/footer';
-import { Hero } from '../components/hero/hero';
-import { Separator } from '../components/separator/separatos';
+import { Banner } from '../banner/banner';
+import { CarouselSection } from '../carousel-section/carousel-section';
+import { Footer } from '../footer/footer';
+import { Hero } from '../hero/hero';
+import { Separator } from '../separator/separatos';
 
 export function Home() {
   return (
