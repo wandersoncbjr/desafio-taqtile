@@ -13,8 +13,8 @@ const immobileData = {
 export function SectionImmobile() {
   return (
     <CarouselPhotos>
-      {ImmobileData.imageUrls.map((img) => (
-        <img src={img}></img>
+      {immobileData.imageUrls.map((img, index) => (
+        <img key={index} src={img} />
       ))}
     </CarouselPhotos>
   );
