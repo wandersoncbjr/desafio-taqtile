@@ -1,6 +1,6 @@
 import { CarouselPhotos } from '../carousel-phostos/carousel-photo';
 
-const ImmobileData = {
+const immobileData = {
   imageUrls: [
     'https://storage.googleapis.com/instituto-taqtile/desafio/property1_1.png',
     'https://storage.googleapis.com/instituto-taqtile/desafio/property1_2.png',
