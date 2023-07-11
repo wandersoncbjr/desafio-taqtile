@@ -7,7 +7,7 @@ const h4Style = {
   fontWeight: constants.font.weight.semiBold,
   fontSize: constants.font.size.medium,
   lineHeight: constants.font.lineHeight.small,
-  color: colors.PrimaryDark,
+  color: colors.NeutralXdark,
   margin: 0,
 };
 
