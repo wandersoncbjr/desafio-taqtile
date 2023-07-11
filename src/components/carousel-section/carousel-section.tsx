@@ -13,27 +13,19 @@ interface CardCarouselSectionProps {
 }
 
 export function CarouselSection({ title, type }: CardCarouselSectionProps) {
-  const {
-    data: categoriesData,
-    error: categoriesError,
-    loading: categoriesLoading,
-  } = useQuery<categoriesResponse>(GET_CATEGORIES);
-  const {
-    data: recentPropertiesData,
-    error: recentPropertiesError,
-    loading: recentPropertiesLoading,
-  } = useQuery<RecentPropertiesResponse>(GET_PROPERTIES);
+  const categoriesResult = useQuery<categoriesResponse>(GET_CATEGORIES);
+  const recentPropertiesResult = useQuery<RecentPropertiesResponse>(GET_PROPERTIES);
 
   return (
     <div style={{ paddingLeft: '60px' }}>
-      <Heading2 key={title}>{title}</Heading2>
-      {categoriesLoading && 'Loading...'}
-      {categoriesError && `Error: ${categoriesError.message}`}
+      <Heading2>{title}</Heading2>
+      {categoriesResult.loading && 'Loading...'}
+      {categoriesResult.error && `Error: ${categoriesResult.error.message}`}
 
       {type === 'category' ? (
-        categoriesData?.categories && (
+        categoriesResult.data?.categories && (
           <Carrousel>
-            {categoriesData.categories.map((category: Category) => (
+            {categoriesResult.data.categories.map((category: Category) => (
               <CardCategory
                 key={category.name}
                 title={category.name}
@@ -45,11 +37,11 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
         )
       ) : (
         <>
-          {recentPropertiesLoading && 'Loading...'}
-          {recentPropertiesError && `Error: ${recentPropertiesError.message}`}
-          {recentPropertiesData?.recentProperties && (
+          {recentPropertiesResult.loading && 'Loading...'}
+          {recentPropertiesResult.error && `Error: ${recentPropertiesResult.error.message}`}
+          {recentPropertiesResult.data?.recentProperties && (
             <Carrousel>
-              {recentPropertiesData.recentProperties.map((property: Property) => (
+              {recentPropertiesResult.data.recentProperties.map((property: Property) => (
                 <CardProperties
                   img={property.imageUrls[0]}
                   key={property.address.city}
