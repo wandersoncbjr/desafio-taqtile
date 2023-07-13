@@ -9,31 +9,30 @@ import { faBath, faBed, faCar, faRulerCombined, faWaterLadder } from '@fortaweso
 import { Heading2 } from '../typography/headline/h2';
 import { Separator } from '../separator/separatos';
 
-export function SectionImmobile() {
-  const sectionImmbileData = {
-    data: {
-      recentProperties: [
-        {
-          bathrooms: 2,
-          bedrooms: 2,
-          area: '8x10 m²',
-          shortDescription: 'Casa à venda em Osasco, bairro Bonfim, melhor da região!',
-          description:
-            'A casa se insere em um clima de paz, de natureza. A decoração acompanha a magia desse microclima ecológico que encanta a adultos e crianças. A casa foi construída em madeira nobre. Decorada com lustres temáticos e estruturas que dão vida ao lugar. Ideal para todos que busquem descansar ou trabalhar e desejam morar na melhor região de Osasco - SP.',
-          address: {
-            street: 'Avenida das Nações Unidas',
-            streetNumber: '3239',
-            complement: 'Complemento 245B',
-            district: 'Bonfim',
-            city: 'Osasco',
-          },
-          hasPool: true,
-          hasGarage: true,
+const sectionImmbileData = {
+  data: {
+    recentProperties: [
+      {
+        bathrooms: 2,
+        bedrooms: 2,
+        area: '8x10 m²',
+        shortDescription: 'Casa à venda em Osasco, bairro Bonfim, melhor da região!',
+        description:
+          'A casa se insere em um clima de paz, de natureza. A decoração acompanha a magia desse microclima ecológico que encanta a adultos e crianças. A casa foi construída em madeira nobre. Decorada com lustres temáticos e estruturas que dão vida ao lugar. Ideal para todos que busquem descansar ou trabalhar e desejam morar na melhor região de Osasco - SP.',
+        address: {
+          street: 'Avenida das Nações Unidas',
+          streetNumber: '3239',
+          complement: 'Complemento 245B',
+          district: 'Bonfim',
+          city: 'Osasco',
         },
-      ],
-    },
-  };
-
+        hasPool: true,
+        hasGarage: true,
+      },
+    ],
+  },
+};
+export function SectionImmobile() {
   const property = sectionImmbileData.data.recentProperties[0];
 
   return (

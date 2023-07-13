@@ -12,6 +12,7 @@ import './App.css';
 export function App() {
   return (
     <div>
+<<<<<<< HEAD
       <Menu />
       <Separator size="large" />
       <Hero />
@@ -21,6 +22,8 @@ export function App() {
       <Banner />
       <CarouselSection title={'Lançamentos que você pode se interessar!'} type="property" />
       <Separator size="large" />
+=======
+>>>>>>> f39d504 (fix: component sectionImmbileData)
       <SectionImmobile />
     </div>
   );
