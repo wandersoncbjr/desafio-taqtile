@@ -12,9 +12,9 @@ export function Home() {
       <Menu />
       <Separator size="large" />
       <Hero />
-      <SectionItemsImmobile />
       <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} type="category" />
       <Separator size="large" />
+      <SectionItemsImmobile />
       <Banner />
       <CarouselSection title={'Lançamentos que você pode se interessar!'} type="property" />
       <Separator size="large" />
