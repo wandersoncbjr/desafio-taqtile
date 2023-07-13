@@ -3,6 +3,7 @@ import { CarouselSection } from '../carousel-section/carousel-section';
 import { Footer } from '../footer/footer';
 import { Hero } from '../hero/hero';
 import { Menu } from '../menu/menu';
+import { SectionItemsImmobile } from '../section-items-immobile.tsx/section-items-immobile';
 import { Separator } from '../separator/separatos';
 
 export function Home() {
@@ -11,6 +12,7 @@ export function Home() {
       <Menu />
       <Separator size="large" />
       <Hero />
+      <SectionItemsImmobile />
       <CarouselSection title={'Encontre o imóvel ideal para o seu estilo de vida!'} type="category" />
       <Separator size="large" />
       <Banner />
