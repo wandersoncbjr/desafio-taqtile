@@ -1,16 +1,17 @@
-.container-icone-description ul {
-  align-items: center;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.container-icone-description {
+.container-icon-description {
   width: 50%;
   display: flex;
   flex-direction: column;
   gap: 8px;
 }
+.container-icon-description ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
-.container-items-immobile {
+.container-icon-description li {
   display: flex;
+  gap: 8px;
+  align-items: center;
 }
