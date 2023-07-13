@@ -15,7 +15,7 @@ export function Menu() {
             Corretora Imobiliária"
         />
         <div className="container-item-menu">
-          <ItemMenu redirect="/home" title="Home" />
+          <ItemMenu redirect="/" title="Home" />
           <Separator size="medium" />
           <ItemMenu redirect="/quem-somos" title="Quem Somos" />
           <Separator size="medium" />
