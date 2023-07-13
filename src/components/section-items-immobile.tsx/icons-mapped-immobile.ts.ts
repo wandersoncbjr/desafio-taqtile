@@ -10,14 +10,14 @@ import {
   faWarehouse,
 } from '@fortawesome/free-solid-svg-icons';
 
-interface IconMappingsProps {
+interface IconMappings {
   [record: string]: {
     icon: IconDefinition;
     title: string;
   };
 }
 
-export const iconMappings: IconMappingsProps = {
+export const iconMappings: IconMappings = {
   AmericanKitchen: {
     icon: faCutlery,
     title: 'Cozinha americana',
