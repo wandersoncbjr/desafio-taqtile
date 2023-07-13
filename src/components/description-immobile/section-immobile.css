@@ -1,0 +1,18 @@
+.location {
+  display: flex;
+  gap: 4px;
+}
+
+.items-card {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 8px;
+}
+
+.container-section-immobile {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-inline: 60px;
+  width: 60%;
+}
