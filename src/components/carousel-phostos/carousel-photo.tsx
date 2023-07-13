@@ -28,8 +28,10 @@ export const CarouselPhotos: React.FC<CarouselProps> = ({ children }) => {
   };
 
   return (
-    <Carousel responsive={responsive} itemClass="carousel-item">
-      {children}
-    </Carousel>
+    <div style={{ margin: '60px' }}>
+      <Carousel responsive={responsive} itemClass="carousel-item">
+        {children}
+      </Carousel>
+    </div>
   );
 };

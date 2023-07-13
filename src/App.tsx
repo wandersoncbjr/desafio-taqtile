@@ -1,9 +1,10 @@
 import React from 'react';
-import { CarouselSection } from './components/carousel-section/carousel-section';
-import { Hero } from './components/hero/hero';
-import { Banner } from './components/banner/banner';
+import { SectionImmobile } from './components/carousel-section-immobile/carousel-section-immobile';
 import { Menu } from './components/menu/menu';
 import { Separator } from './components/separator/separatos';
+import { Hero } from './components/hero/hero';
+import { CarouselSection } from './components/carousel-section/carousel-section';
+import { Banner } from './components/banner/banner';
 import { Footer } from './components/footer/footer';
 
 export function App() {
@@ -17,6 +18,7 @@ export function App() {
       <Banner />
       <CarouselSection title={'Lançamentos que você pode se interessar!'} type="property" />
       <Separator size="large" />
+      <SectionImmobile />
       <Footer />
     </div>
   );
