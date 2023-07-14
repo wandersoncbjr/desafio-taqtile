@@ -32,7 +32,7 @@ const sectionImmbileData = {
     ],
   },
 };
-export function SectionImmobile() {
+export function SectionDescriptionImmobile() {
   const property = sectionImmbileData.data.recentProperties[0];
 
   return (
