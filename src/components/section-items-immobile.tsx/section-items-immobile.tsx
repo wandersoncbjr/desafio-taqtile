@@ -29,7 +29,7 @@ export function SectionItems({ title, variant }: SectionItemsProps) {
   }
 
   return (
-    <div style={{ width: '60%', paddingInline: '60px' }}>
+    <section style={{ width: '60%', paddingInline: '60px' }}>
       <Divider />
       <Separator size="large" />
       <Heading2>{title}</Heading2>
@@ -56,6 +56,6 @@ export function SectionItems({ title, variant }: SectionItemsProps) {
         </div>
       </div>
       <Separator size="large" />
-    </div>
+    </section>
   );
 }
