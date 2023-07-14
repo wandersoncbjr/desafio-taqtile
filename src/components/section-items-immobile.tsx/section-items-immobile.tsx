@@ -4,18 +4,38 @@ import { Heading2 } from '../typography/headline/h2';
 import './section-items-immobile.css';
 import { colors } from '../../typography/colors';
 import { Divider } from '../cards/divider/divider';
-import { renderedItemsNotPresentInProperty, renderedItemsPresentInProperty } from './item-filter';
+import {
+  renderedItemsNotPresentInProperty,
+  renderedItemsPresentInProperty,
+  renderedItemsNotPresentInCondominium,
+  renderedItemsPresentInCondominium,
+} from './item-filter';
 import { Separator } from '../separator/separatos';
 
-export function SectionItemsImmobile() {
+interface SectionItemsProps {
+  title: string;
+  variant: 'Immobile' | 'condominium';
+}
+
+export function SectionItems({ title, variant }: SectionItemsProps) {
+  let renderedItemsPresent, renderedItemsNotPresent;
+
+  if (variant === 'Immobile') {
+    renderedItemsPresent = renderedItemsPresentInProperty;
+    renderedItemsNotPresent = renderedItemsNotPresentInProperty;
+  } else {
+    renderedItemsPresent = renderedItemsPresentInCondominium;
+    renderedItemsNotPresent = renderedItemsNotPresentInCondominium;
+  }
+
   return (
     <div style={{ width: '60%', paddingInline: '60px' }}>
       <Divider />
       <Separator size="large" />
-      <Heading2>O que esse lugar oferece</Heading2>
+      <Heading2>{title}</Heading2>
       <div style={{ display: 'flex' }}>
         <div className="container-icon-description">
-          {renderedItemsPresentInProperty.map((item, index) => (
+          {renderedItemsPresent.map((item, index) => (
             <ul key={index}>
               <li>
                 {item?.data?.icon && <FontAwesomeIcon icon={item?.data?.icon} color={colors.CTA} />}
@@ -25,7 +45,7 @@ export function SectionItemsImmobile() {
           ))}
         </div>
         <div className="container-icon-description">
-          {renderedItemsNotPresentInProperty.map((item, index) => (
+          {renderedItemsNotPresent.map((item, index) => (
             <ul key={index}>
               <li>
                 {item?.data?.icon && <FontAwesomeIcon icon={item?.data?.icon} color={colors.NeutralLight} />}

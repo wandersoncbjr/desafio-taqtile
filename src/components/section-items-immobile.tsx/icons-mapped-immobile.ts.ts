@@ -1,28 +1,36 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faBell,
+  faCar,
   faCutlery,
   faDiceFive,
+  faElevator,
+  faFaceSmile,
+  faGamepad,
   faHouse,
+  faHouseUser,
+  faJugDetergent,
   faLeaf,
   faLightbulb,
+  faPaw,
   faPersonSwimming,
+  faTableTennis,
   faWarehouse,
 } from '@fortawesome/free-solid-svg-icons';
 
-interface IconMappings {
+export interface IconMappings {
   [record: string]: {
     icon: IconDefinition;
     title: string;
   };
 }
 
-export const iconMappings: IconMappings = {
+export const immobileIconMapping: IconMappings = {
   AmericanKitchen: {
     icon: faCutlery,
     title: 'Cozinha americana',
   },
-  'service area': {
+  serviceArea: {
     icon: faLeaf,
     title: 'Área de serviço',
   },
@@ -50,12 +58,55 @@ export const iconMappings: IconMappings = {
     icon: faHouse,
     title: 'Cobertura',
   },
-  'bell system': {
+  bellSystem: {
     icon: faBell,
     title: 'sistema de campainha',
   },
 };
 
+export const condominiumIconMapping: IconMappings = {
+  Pool: {
+    icon: faPersonSwimming,
+    title: 'Piscina',
+  },
+  Concierge: {
+    icon: faHouseUser,
+    title: 'Portaria',
+  },
+  Playground: {
+    icon: faFaceSmile,
+    title: 'Playground',
+  },
+  SportsCourt: {
+    icon: faTableTennis,
+    title: 'Quadra esportiva',
+  },
+  Elevator: {
+    icon: faElevator,
+    title: 'Elevador',
+  },
+  Loundry: {
+    icon: faJugDetergent,
+    title: 'Lavanderia',
+  },
+  petArea: {
+    icon: faPaw,
+    title: 'Área pet',
+  },
+  toyLibrary: {
+    icon: faGamepad,
+    title: 'Brinquedoteca',
+  },
+  Parking: {
+    icon: faCar,
+    title: 'Estacionamento',
+  },
+};
+
 export const SectionItemImmbolieData = {
   availableOnProperty: ['AmericanKitchen', 'Garden', 'Garage', 'PrivatePool', 'GasShower'],
+};
+
+export const SectionItemCondominiumData = {
+  availableOnCondominium: ['Pool', 'Playground', 'Concierge', 'SportsCourt', 'Loundry'],
 };

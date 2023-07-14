@@ -1,38 +1,86 @@
-import { iconMappings, SectionItemImmbolieData } from './icons-mapped-immobile.ts';
+import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
+import {
+  immobileIconMapping,
+  SectionItemImmbolieData,
+  SectionItemCondominiumData,
+  condominiumIconMapping,
+} from './icons-mapped-immobile.ts';
 
 const possibleItemsInProperty = {
   availableOnProperty: [
     'AmericanKitchen',
-    'service area',
+    'serviceArea',
     'Garden',
     'Garage',
     'PrivatePool',
     'GasShower',
     'furniture',
     'Roof',
-    'bell system',
+    'bellSystem',
   ],
 };
-export const itemsPresentInProperty = possibleItemsInProperty.availableOnProperty.filter((item) => {
-  return SectionItemImmbolieData.availableOnProperty.includes(item);
-});
 
-export const itemsNotPresentInProperty = possibleItemsInProperty.availableOnProperty.filter((item) => {
-  return !SectionItemImmbolieData.availableOnProperty.includes(item);
-});
+const possibleItemsInCondominium = {
+  availableOnCondominium: [
+    'Pool',
+    'Playground',
+    'Concierge',
+    'SportsCourt',
+    'Elevator',
+    'Loundry',
+    'petArea',
+    'toyLibrary',
+    'Parking',
+  ],
+};
+interface ItemData {
+  icon: IconDefinition;
+  title: string;
+}
 
-export const renderedItemsPresentInProperty = itemsPresentInProperty.map((item) => {
-  if (iconMappings[item]) {
-    return {
-      data: iconMappings[item],
-    };
-  }
-});
+export function getItemsPresent(
+  possibleItems: string[],
+  availableItems: string[],
+  mappings: Record<string, ItemData>,
+): { data: ItemData }[] {
+  return possibleItems
+    .filter((item) => availableItems.includes(item))
+    .map((item) => ({
+      data: mappings[item],
+    }));
+}
 
-export const renderedItemsNotPresentInProperty = itemsNotPresentInProperty.map((item) => {
-  if (iconMappings[item]) {
-    return {
-      data: iconMappings[item],
-    };
-  }
-});
+export function getItemsNotPresent(
+  possibleItems: string[],
+  availableItems: string[],
+  mappings: Record<string, ItemData>,
+): { data: ItemData }[] {
+  return possibleItems
+    .filter((item) => !availableItems.includes(item))
+    .map((item) => ({
+      data: mappings[item],
+    }));
+}
+
+export const renderedItemsNotPresentInProperty = getItemsNotPresent(
+  possibleItemsInProperty.availableOnProperty,
+  SectionItemImmbolieData.availableOnProperty,
+  immobileIconMapping,
+);
+
+export const renderedItemsPresentInProperty = getItemsPresent(
+  possibleItemsInProperty.availableOnProperty,
+  SectionItemImmbolieData.availableOnProperty,
+  immobileIconMapping,
+);
+
+export const renderedItemsNotPresentInCondominium = getItemsNotPresent(
+  possibleItemsInCondominium.availableOnCondominium,
+  SectionItemCondominiumData.availableOnCondominium,
+  condominiumIconMapping,
+);
+export const renderedItemsPresentInCondominium = getItemsPresent(
+  possibleItemsInCondominium.availableOnCondominium,
+  SectionItemCondominiumData.availableOnCondominium,
+  condominiumIconMapping,
+);
