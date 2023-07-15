@@ -3,7 +3,7 @@ import { SectionDescriptionImmobile } from '../description-immobile/section-immo
 import { Footer } from '../footer/footer';
 import { Menu } from '../menu/menu';
 import { Proximities } from '../proximities/proximities';
-import { SectionItems } from '../section-items-immobile/section-items-immobile';
+import { SectionItems } from '../section-items-immobile.tsx/section-items-immobile';
 
 export function PropertyDetails() {
   return (
