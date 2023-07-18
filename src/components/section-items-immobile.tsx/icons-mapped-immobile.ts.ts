@@ -18,12 +18,7 @@ import {
   faWarehouse,
 } from '@fortawesome/free-solid-svg-icons';
 
-export interface IconMappings {
-  [record: string]: {
-    icon: IconDefinition;
-    title: string;
-  };
-}
+export type IconMappings = Record<string, { icon: IconDefinition; title: string };
 
 export const immobileIconMapping: IconMappings = {
   AmericanKitchen: {
