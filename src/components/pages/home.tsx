@@ -3,7 +3,7 @@ import { CarouselSection } from '../carousel-section/carousel-section';
 import { Footer } from '../footer/footer';
 import { Hero } from '../hero/hero';
 import { Menu } from '../menu/menu';
-import { Separator } from '../separator/separatos';
+import { Separator } from '../separator/separator';
 
 export function Home() {
   return (

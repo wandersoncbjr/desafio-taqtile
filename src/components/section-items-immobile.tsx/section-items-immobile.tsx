@@ -4,7 +4,7 @@ import { Heading2 } from '../typography/headline/h2';
 import './section-items-immobile.css';
 import { colors } from '../../typography/colors';
 import { Divider } from '../cards/divider/divider';
-import { Separator } from '../separator/separatos';
+import { Separator } from '../separator/separator';
 import {
   renderedItemsNotPresentInProperty,
   renderedItemsPresentInProperty,

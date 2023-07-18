@@ -1,5 +1,5 @@
 import { Button } from '../button/button';
-import { Separator } from '../separator/separatos';
+import { Separator } from '../separator/separator';
 import { Body1 } from '../typography/body/body-primary';
 import { Display } from '../typography/display/display';
 import heroPhoto from './hero-photo.svg';

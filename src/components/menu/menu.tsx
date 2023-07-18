@@ -1,5 +1,5 @@
 import { Button } from '../button/button';
-import { Separator } from '../separator/separatos';
+import { Separator } from '../separator/separator';
 import { Label } from '../typography/label/label';
 import { ItemMenu } from './item-menu';
 import logo from './logo.svg';

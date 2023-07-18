@@ -7,7 +7,7 @@ import { ContainerCard } from '../cards/card-container/card-container';
 import { ItemsCard } from '../items-card/items-card';
 import { faBath, faBed, faCar, faRulerCombined, faWaterLadder } from '@fortawesome/free-solid-svg-icons';
 import { Heading2 } from '../typography/headline/h2';
-import { Separator } from '../separator/separatos';
+import { Separator } from '../separator/separator';
 
 const sectionImmbileData = {
   data: {
