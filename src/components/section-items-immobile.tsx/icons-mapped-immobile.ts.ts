@@ -37,7 +37,7 @@ export enum CondominiumItems {
   Playground = 'Playground',
   SportsCourt = 'SportsCourt',
   Elevator = 'Elevator',
-  Laundry = 'Laundry',
+  Laundry = 'Loundry',
   PetArea = 'PetArea',
   ToyLibrary = 'ToyLibrary',
   Parking = 'Parking',
