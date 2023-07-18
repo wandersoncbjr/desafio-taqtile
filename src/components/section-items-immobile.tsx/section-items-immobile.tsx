@@ -15,7 +15,7 @@ import {
 
 interface SectionItemsProps {
   title: string;
-  variant: 'Immobile' | 'condominium';
+  variant: 'Immobile' | 'Condominium';
 }
 
 export function SectionItems({ title, variant }: SectionItemsProps) {
