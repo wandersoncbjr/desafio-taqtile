@@ -7,9 +7,12 @@ import { BodySecondary } from '../typography/body/body-secondary';
 import './proximities.css';
 import { Separator } from '../separator/separator';
 import { Divider } from '../cards/divider/divider';
+<<<<<<< HEAD
 =======
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 >>>>>>> 7bc78d7 (feat: add component proximities)
+=======
+>>>>>>> 61d8efe (fix: proximities)
 import {
   IconDefinition,
   faCartShopping,
@@ -18,6 +21,7 @@ import {
   faLeaf,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 enum ProximitiesType {
@@ -60,8 +64,10 @@ import { BodySecondary } from '../typography/body/body-secondary';
 import './proximities.css';
 import { Separator } from '../separator/separatos';
 import { Divider } from '../cards/divider/divider';
+=======
+>>>>>>> 61d8efe (fix: proximities)
 
-const ProximitiesData = {
+const proximitiesData = {
   proximities: [
     {
       type: 'WellRatedRestaurants',
@@ -90,6 +96,14 @@ const ProximitiesData = {
     },
   ],
 };
+enum proximitiesType {
+  WellRatedRestaurants = 'WellRatedRestaurants',
+  GreenAreas = 'GreenAreas',
+  Schools = 'Schools',
+  Colleges = 'Colleges',
+  Hospitals = 'Hospitals',
+  Markets = 'Markets',
+}
 
 <<<<<<< HEAD
 type ProximitiesIconMapping = Record<ProximitiesType, { icon: IconDefinition; title: string }>;
@@ -125,28 +139,32 @@ interface ProximitiesIconMapping {
 }
 
 const proximitiesIconMapping: ProximitiesIconMapping = {
-  WellRatedRestaurants: {
+  [proximitiesType.WellRatedRestaurants]: {
     icon: faUtensils,
     title: 'Restaurantes bem avaliados',
   },
-  GreenAreas: {
+  [proximitiesType.GreenAreas]: {
     icon: faLeaf,
     title: 'Parques e áreas verdes',
   },
-  Schools: {
+  [proximitiesType.Schools]: {
     icon: faGraduationCap,
     title: 'Escolas e colégio',
   },
-  Colleges: {
+  [proximitiesType.Colleges]: {
     icon: faGraduationCap,
     title: 'Faculdades',
   },
-  Hospitals: {
+  [proximitiesType.Hospitals]: {
     icon: faHospital,
     title: 'Hospitais',
   },
+<<<<<<< HEAD
   Markets: {
 >>>>>>> 7bc78d7 (feat: add component proximities)
+=======
+  [proximitiesType.Markets]: {
+>>>>>>> 61d8efe (fix: proximities)
     icon: faCartShopping,
     title: 'Mercados',
   },
@@ -158,10 +176,14 @@ export function Proximities() {
       <Divider />
       <Heading2>Proximidades</Heading2>
 <<<<<<< HEAD
+<<<<<<< HEAD
       {proximitiesData.proximities.map((proximity, index) => (
 =======
       {ProximitiesData.proximities.map((proximity, index) => (
 >>>>>>> 7bc78d7 (feat: add component proximities)
+=======
+      {proximitiesData.proximities.map((proximity, index) => (
+>>>>>>> 61d8efe (fix: proximities)
         <div key={index} className="container-icon-description-title">
           <div>
             <FontAwesomeIcon icon={proximitiesIconMapping[proximity.type].icon} color={colors.NeutralDark} />
