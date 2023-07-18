@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 /* eslint-disable no-unused-vars */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Heading2 } from '../typography/headline/h2';
@@ -7,9 +6,6 @@ import { BodySecondary } from '../typography/body/body-secondary';
 import './proximities.css';
 import { Separator } from '../separator/separator';
 import { Divider } from '../cards/divider/divider';
-=======
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
->>>>>>> 7bc78d7 (feat: add component proximities)
 import {
   IconDefinition,
   faCartShopping,
@@ -18,7 +14,6 @@ import {
   faLeaf,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-<<<<<<< HEAD
 
 enum ProximitiesType {
   WellRatedRestaurants = 'WellRatedRestaurants',
@@ -53,45 +48,11 @@ const proximitiesData = {
     },
     {
       type: ProximitiesType.Markets,
-=======
-import { Heading2 } from '../typography/headline/h2';
-import { colors } from '../../typography/colors';
-import { BodySecondary } from '../typography/body/body-secondary';
-import './proximities.css';
-import { Separator } from '../separator/separatos';
-import { Divider } from '../cards/divider/divider';
-
-const ProximitiesData = {
-  proximities: [
-    {
-      type: 'WellRatedRestaurants',
-      description: 'Cabanã Osasco, Salva Burguer, Jin Chef e O Bom do Baião.',
-    },
-    {
-      type: 'GreenAreas',
-      description: '2° Floresta Urbana de Osasco, Parque Chico Mendes e Praça Laurindo de Camargo.',
-    },
-    {
-      type: 'Schools',
-      description: 'E.E. Profº Francisco Casabona, ETEC Professor André Bogasian e Colégio Padre Anchieta.',
-    },
-    {
-      type: 'Colleges',
-      description: 'Universidade Estácio - Polo Osasco, Universidade Anhembi Morumbi e FNJ - Faculdade Nove de Julho.',
-    },
-    {
-      type: 'Hospitals',
-      description: 'Hospital Nossa Senhora de Fátima e Hospital Geral de Carapicuíba..',
-    },
-    {
-      type: 'Markets',
->>>>>>> 7bc78d7 (feat: add component proximities)
       description: 'Atacadão, Mercado Moretti Bittencourt e Mercado Municipal de Osasco.',
     },
   ],
 };
 
-<<<<<<< HEAD
 type ProximitiesIconMapping = Record<ProximitiesType, { icon: IconDefinition; title: string }>;
 
 const proximitiesIconMapping: ProximitiesIconMapping = {
@@ -116,37 +77,6 @@ const proximitiesIconMapping: ProximitiesIconMapping = {
     title: 'Hospitais',
   },
   [ProximitiesType.Markets]: {
-=======
-interface ProximitiesIconMapping {
-  [key: string]: {
-    icon: IconDefinition;
-    title: string;
-  };
-}
-
-const proximitiesIconMapping: ProximitiesIconMapping = {
-  WellRatedRestaurants: {
-    icon: faUtensils,
-    title: 'Restaurantes bem avaliados',
-  },
-  GreenAreas: {
-    icon: faLeaf,
-    title: 'Parques e áreas verdes',
-  },
-  Schools: {
-    icon: faGraduationCap,
-    title: 'Escolas e colégio',
-  },
-  Colleges: {
-    icon: faGraduationCap,
-    title: 'Faculdades',
-  },
-  Hospitals: {
-    icon: faHospital,
-    title: 'Hospitais',
-  },
-  Markets: {
->>>>>>> 7bc78d7 (feat: add component proximities)
     icon: faCartShopping,
     title: 'Mercados',
   },
@@ -157,11 +87,7 @@ export function Proximities() {
     <section style={{ width: '60%', paddingInline: '60px' }}>
       <Divider />
       <Heading2>Proximidades</Heading2>
-<<<<<<< HEAD
       {proximitiesData.proximities.map((proximity, index) => (
-=======
-      {ProximitiesData.proximities.map((proximity, index) => (
->>>>>>> 7bc78d7 (feat: add component proximities)
         <div key={index} className="container-icon-description-title">
           <div>
             <FontAwesomeIcon icon={proximitiesIconMapping[proximity.type].icon} color={colors.NeutralDark} />
