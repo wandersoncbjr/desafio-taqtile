@@ -4,13 +4,14 @@ import { Heading2 } from '../typography/headline/h2';
 import './section-items-immobile.css';
 import { colors } from '../../typography/colors';
 import { Divider } from '../cards/divider/divider';
+import { Separator } from '../separator/separatos';
 import {
   renderedItemsNotPresentInProperty,
   renderedItemsPresentInProperty,
   renderedItemsNotPresentInCondominium,
   renderedItemsPresentInCondominium,
+  ItemData,
 } from './item-filter';
-import { Separator } from '../separator/separatos';
 
 interface SectionItemsProps {
   title: string;
@@ -18,7 +19,8 @@ interface SectionItemsProps {
 }
 
 export function SectionItems({ title, variant }: SectionItemsProps) {
-  let renderedItemsPresent, renderedItemsNotPresent;
+  let renderedItemsPresent: { data: ItemData }[] = [];
+  let renderedItemsNotPresent: { data: ItemData }[] = [];
 
   if (variant === 'Immobile') {
     renderedItemsPresent = renderedItemsPresentInProperty;

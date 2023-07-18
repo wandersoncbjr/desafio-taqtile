@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import {
   faBell,
@@ -18,90 +19,114 @@ import {
   faWarehouse,
 } from '@fortawesome/free-solid-svg-icons';
 
-export type IconMappings = Record<string, { icon: IconDefinition; title: string };
+export enum Immobileitems {
+  AmericanKitchen = 'AmericanKitchen',
+  ServiceArea = 'ServiceArea',
+  Garden = 'Garden',
+  Garage = 'Garage',
+  PrivatePool = 'PrivatePool',
+  GasShower = 'GasShower',
+  Furniture = 'Furniture',
+  Roof = 'Roof',
+  BellSystem = 'BellSystem',
+}
+
+export enum CondominiumItems {
+  Pool = 'Pool',
+  Concierge = 'Concierge',
+  Playground = 'Playground',
+  SportsCourt = 'SportsCourt',
+  Elevator = 'Elevator',
+  Laundry = 'Laundry',
+  PetArea = 'PetArea',
+  ToyLibrary = 'ToyLibrary',
+  Parking = 'Parking',
+}
+
+export type IconMappings = Record<string, { icon: IconDefinition; title: string }>;
 
 export const immobileIconMapping: IconMappings = {
-  AmericanKitchen: {
+  [Immobileitems.AmericanKitchen]: {
     icon: faCutlery,
     title: 'Cozinha americana',
   },
-  serviceArea: {
+  [Immobileitems.ServiceArea]: {
     icon: faLeaf,
     title: 'Área de serviço',
   },
-  Garden: {
+  [Immobileitems.Garden]: {
     icon: faLeaf,
     title: 'Jardim',
   },
-  Garage: {
+  [Immobileitems.Garage]: {
     icon: faWarehouse,
     title: 'Garagem',
   },
-  PrivatePool: {
+  [Immobileitems.PrivatePool]: {
     icon: faPersonSwimming,
     title: 'Piscina privada',
   },
-  GasShower: {
+  [Immobileitems.GasShower]: {
     icon: faDiceFive,
     title: 'Chuveiro a Gás',
   },
-  furniture: {
+  [Immobileitems.Furniture]: {
     icon: faLightbulb,
     title: 'Mobílias',
   },
-  Roof: {
+  [Immobileitems.Roof]: {
     icon: faHouse,
     title: 'Cobertura',
   },
-  bellSystem: {
+  [Immobileitems.BellSystem]: {
     icon: faBell,
-    title: 'sistema de campainha',
+    title: 'Sistema de campainha',
   },
 };
 
 export const condominiumIconMapping: IconMappings = {
-  Pool: {
+  [CondominiumItems.Pool]: {
     icon: faPersonSwimming,
     title: 'Piscina',
   },
-  Concierge: {
+  [CondominiumItems.Concierge]: {
     icon: faHouseUser,
     title: 'Portaria',
   },
-  Playground: {
+  [CondominiumItems.Playground]: {
     icon: faFaceSmile,
     title: 'Playground',
   },
-  SportsCourt: {
+  [CondominiumItems.SportsCourt]: {
     icon: faTableTennis,
     title: 'Quadra esportiva',
   },
-  Elevator: {
+  [CondominiumItems.Elevator]: {
     icon: faElevator,
     title: 'Elevador',
   },
-  Loundry: {
+  [CondominiumItems.Laundry]: {
     icon: faJugDetergent,
     title: 'Lavanderia',
   },
-  petArea: {
+  [CondominiumItems.PetArea]: {
     icon: faPaw,
     title: 'Área pet',
   },
-  toyLibrary: {
+  [CondominiumItems.ToyLibrary]: {
     icon: faGamepad,
     title: 'Brinquedoteca',
   },
-  Parking: {
+  [CondominiumItems.Parking]: {
     icon: faCar,
     title: 'Estacionamento',
   },
 };
 
-export const SectionItemImmbolieData = {
+export const sectionItemImmbolieData = {
   availableOnProperty: ['AmericanKitchen', 'Garden', 'Garage', 'PrivatePool', 'GasShower'],
 };
 
-export const SectionItemCondominiumData = {
+export const sectionItemCondominiumData = {
   availableOnCondominium: ['Pool', 'Playground', 'Concierge', 'SportsCourt', 'Loundry'],
 };
