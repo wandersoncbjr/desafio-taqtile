@@ -1,4 +1,10 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { Heading2 } from '../typography/headline/h2';
+import { colors } from '../../typography/colors';
+import { BodySecondary } from '../typography/body/body-secondary';
+import './proximities.css';
+import { Separator } from '../separator/separator';
+import { Divider } from '../cards/divider/divider';
 import {
   IconDefinition,
   faCartShopping,
@@ -7,14 +13,8 @@ import {
   faLeaf,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
-import { Heading2 } from '../typography/headline/h2';
-import { colors } from '../../typography/colors';
-import { BodySecondary } from '../typography/body/body-secondary';
-import './proximities.css';
-import { Separator } from '../separator/separatos';
-import { Divider } from '../cards/divider/divider';
 
-const ProximitiesData = {
+const proximitiesData = {
   proximities: [
     {
       type: 'WellRatedRestaurants',
@@ -42,6 +42,14 @@ const ProximitiesData = {
     },
   ],
 };
+enum proximitiesType {
+  WellRatedRestaurants = 'WellRatedRestaurants',
+  GreenAreas = 'GreenAreas',
+  Schools = 'Schools',
+  Colleges = 'Colleges',
+  Hospitals = 'Hospitals',
+  Markets = 'Markets',
+}
 
 interface ProximitiesIconMapping {
   [key: string]: {
@@ -51,27 +59,27 @@ interface ProximitiesIconMapping {
 }
 
 const proximitiesIconMapping: ProximitiesIconMapping = {
-  WellRatedRestaurants: {
+  [proximitiesType.WellRatedRestaurants]: {
     icon: faUtensils,
     title: 'Restaurantes bem avaliados',
   },
-  GreenAreas: {
+  [proximitiesType.GreenAreas]: {
     icon: faLeaf,
     title: 'Parques e áreas verdes',
   },
-  Schools: {
+  [proximitiesType.Schools]: {
     icon: faGraduationCap,
     title: 'Escolas e colégio',
   },
-  Colleges: {
+  [proximitiesType.Colleges]: {
     icon: faGraduationCap,
     title: 'Faculdades',
   },
-  Hospitals: {
+  [proximitiesType.Hospitals]: {
     icon: faHospital,
     title: 'Hospitais',
   },
-  Markets: {
+  [proximitiesType.Markets]: {
     icon: faCartShopping,
     title: 'Mercados',
   },
@@ -82,7 +90,7 @@ export function Proximities() {
     <section style={{ width: '60%', paddingInline: '60px' }}>
       <Divider />
       <Heading2>Proximidades</Heading2>
-      {ProximitiesData.proximities.map((proximity, index) => (
+      {proximitiesData.proximities.map((proximity, index) => (
         <div key={index} className="container-icon-description-title">
           <div>
             <FontAwesomeIcon icon={proximitiesIconMapping[proximity.type].icon} color={colors.NeutralDark} />
