@@ -23,6 +23,7 @@ enum ProximitiesType {
   Hospitals = 'Hospitals',
   Markets = 'Markets',
 }
+<<<<<<< HEAD
 
 const proximitiesData = {
   proximities: [
@@ -54,6 +55,14 @@ const proximitiesData = {
 };
 
 type ProximitiesIconMapping = Record<ProximitiesType, { icon: IconDefinition; title: string }>;
+=======
+interface ProximitiesIconMapping {
+  [key: string]: {
+    icon: IconDefinition;
+    title: string;
+  };
+}
+>>>>>>> 4462aa5 (fix: eslint)
 
 const proximitiesIconMapping: ProximitiesIconMapping = {
   [ProximitiesType.WellRatedRestaurants]: {
