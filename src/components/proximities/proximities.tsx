@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Heading2 } from '../typography/headline/h2';
 import { colors } from '../../typography/colors';
@@ -50,7 +51,6 @@ enum proximitiesType {
   Hospitals = 'Hospitals',
   Markets = 'Markets',
 }
-
 interface ProximitiesIconMapping {
   [key: string]: {
     icon: IconDefinition;
