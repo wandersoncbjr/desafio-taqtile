@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 4462aa5 (fix: eslint)
 /* eslint-disable no-unused-vars */
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Heading2 } from '../typography/headline/h2';
@@ -104,6 +107,7 @@ enum proximitiesType {
   Hospitals = 'Hospitals',
   Markets = 'Markets',
 }
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 type ProximitiesIconMapping = Record<ProximitiesType, { icon: IconDefinition; title: string }>;
@@ -131,6 +135,8 @@ const proximitiesIconMapping: ProximitiesIconMapping = {
   },
   [ProximitiesType.Markets]: {
 =======
+=======
+>>>>>>> 4462aa5 (fix: eslint)
 interface ProximitiesIconMapping {
   [key: string]: {
     icon: IconDefinition;
