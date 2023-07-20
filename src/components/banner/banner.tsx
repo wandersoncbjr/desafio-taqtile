@@ -5,7 +5,7 @@ import './banner.css';
 import banner from './banner.svg';
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 import { colors } from '../../typography/colors';
-import { Separator } from '../separator/separatos';
+import { Separator } from '../separator/separator';
 
 const handleBannerClick = () => {
   alert('Em construção');

@@ -10,7 +10,7 @@ const immobileData = {
   ],
 };
 
-export function SectionImmobile() {
+export function SectionCarouselImmobile() {
   return (
     <CarouselPhotos>
       {immobileData.imageUrls.map((img, index) => (

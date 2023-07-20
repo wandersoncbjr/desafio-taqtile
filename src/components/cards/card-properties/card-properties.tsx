@@ -10,7 +10,7 @@ import { Caption } from '../../typography/caption/caption';
 import './card-properties.css';
 import { Divider } from '../divider/divider';
 import { formatPrice } from '../../../price-formatter';
-import { Separator } from '../../separator/separatos';
+import { Separator } from '../../separator/separator';
 
 interface DataProps {
   property: string;
