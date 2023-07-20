@@ -23,7 +23,7 @@ export function PropertyDetails() {
         }}
       >
         <Proximities />
-        <div style={{ width: '30%', height: '415px' }}>
+        <div style={{ width: '390px', height: '415px' }}>
           <Location />
         </div>
       </div>
