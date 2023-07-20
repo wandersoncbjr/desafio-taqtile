@@ -14,10 +14,18 @@ export function PropertyDetails() {
       <SectionDescriptionImmobile />
       <SectionItems title="O que esse lugar oferece" variant="Immobile" />
       <SectionItems title="Disponível no condomínio" variant="Condominium" />
-      <Proximities />
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          paddingInline: '60px',
+        }}
+      >
         <Proximities />
-        <Location />
+        <div style={{ width: '30%', height: '415px' }}>
+          <Location />
+        </div>
       </div>
       <Footer />
     </>
