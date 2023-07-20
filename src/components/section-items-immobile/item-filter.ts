@@ -6,7 +6,7 @@ import {
   condominiumIconMapping,
   Immobileitems,
   CondominiumItems,
-} from '././icons-mapped-immobile';
+} from './icons-mapped-immobile';
 
 const possibleItemsInProperty = [
   Immobileitems.AmericanKitchen,
