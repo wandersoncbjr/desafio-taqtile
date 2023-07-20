@@ -12,7 +12,7 @@ export function PropertyDetails() {
       <SectionCarouselImmobile />
       <SectionDescriptionImmobile />
       <SectionItems title="O que esse lugar oferece" variant="Immobile" />
-      <SectionItems title="Disponível no condomínio" variant="Condominium" />
+      <SectionItems title="Disponível no- condomínio" variant="Condominium" />
       <Proximities />
       <Footer />
     </>
