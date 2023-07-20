@@ -15,35 +15,7 @@ import {
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
 
-const proximitiesData = {
-  proximities: [
-    {
-      type: 'WellRatedRestaurants',
-      description: 'Cabanã Osasco, Salva Burguer, Jin Chef e O Bom do Baião.',
-    },
-    {
-      type: 'GreenAreas',
-      description: '2° Floresta Urbana de Osasco, Parque Chico Mendes e Praça Laurindo de Camargo.',
-    },
-    {
-      type: 'Schools',
-      description: 'E.E. Profº Francisco Casabona, ETEC Professor André Bogasian e Colégio Padre Anchieta.',
-    },
-    {
-      type: 'Colleges',
-      description: 'Universidade Estácio - Polo Osasco, Universidade Anhembi Morumbi e FNJ - Faculdade Nove de Julho.',
-    },
-    {
-      type: 'Hospitals',
-      description: 'Hospital Nossa Senhora de Fátima e Hospital Geral de Carapicuíba..',
-    },
-    {
-      type: 'Markets',
-      description: 'Atacadão, Mercado Moretti Bittencourt e Mercado Municipal de Osasco.',
-    },
-  ],
-};
-enum proximitiesType {
+enum ProximitiesType {
   WellRatedRestaurants = 'WellRatedRestaurants',
   GreenAreas = 'GreenAreas',
   Schools = 'Schools',
@@ -51,35 +23,60 @@ enum proximitiesType {
   Hospitals = 'Hospitals',
   Markets = 'Markets',
 }
-interface ProximitiesIconMapping {
-  [key: string]: {
-    icon: IconDefinition;
-    title: string;
-  };
-}
+
+const proximitiesData = {
+  proximities: [
+    {
+      type: ProximitiesType.WellRatedRestaurants,
+      description: 'Cabanã Osasco, Salva Burguer, Jin Chef e O Bom do Baião.',
+    },
+    {
+      type: ProximitiesType.GreenAreas,
+      description: '2° Floresta Urbana de Osasco, Parque Chico Mendes e Praça Laurindo de Camargo.',
+    },
+    {
+      type: ProximitiesType.Schools,
+      description: 'E.E. Profº Francisco Casabona, ETEC Professor André Bogasian e Colégio Padre Anchieta.',
+    },
+    {
+      type: ProximitiesType.Colleges,
+      description: 'Universidade Estácio - Polo Osasco, Universidade Anhembi Morumbi e FNJ - Faculdade Nove de Julho.',
+    },
+    {
+      type: ProximitiesType.Hospitals,
+      description: 'Hospital Nossa Senhora de Fátima e Hospital Geral de Carapicuíba..',
+    },
+    {
+      type: ProximitiesType.Markets,
+      description: 'Atacadão, Mercado Moretti Bittencourt e Mercado Municipal de Osasco.',
+    },
+  ],
+};
+
+type ProximitiesIconMapping = Record<ProximitiesType, { icon: IconDefinition; title: string }>;
 
 const proximitiesIconMapping: ProximitiesIconMapping = {
-  [proximitiesType.WellRatedRestaurants]: {
+  [ProximitiesType.WellRatedRestaurants]: {
     icon: faUtensils,
     title: 'Restaurantes bem avaliados',
   },
-  [proximitiesType.GreenAreas]: {
+  [ProximitiesType.GreenAreas]: {
     icon: faLeaf,
     title: 'Parques e áreas verdes',
   },
-  [proximitiesType.Schools]: {
+  [ProximitiesType.Schools]: {
     icon: faGraduationCap,
     title: 'Escolas e colégio',
   },
-  [proximitiesType.Colleges]: {
+  [ProximitiesType.Colleges]: {
     icon: faGraduationCap,
     title: 'Faculdades',
   },
-  [proximitiesType.Hospitals]: {
+  [ProximitiesType.Hospitals]: {
     icon: faHospital,
     title: 'Hospitais',
   },
-  [proximitiesType.Markets]: {
+  [ProximitiesType.Markets]: {
     icon: faCartShopping,
     title: 'Mercados',
   },
