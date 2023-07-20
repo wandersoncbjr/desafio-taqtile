@@ -123,10 +123,18 @@ export const condominiumIconMapping: IconMappings = {
   },
 };
 
-export const sectionItemImmbolieData = {
-  availableOnProperty: ['AmericanKitchen', 'Garden', 'Garage', 'PrivatePool', 'GasShower'],
-};
+export const sectionItemImmbolieData = [
+  Immobileitems.AmericanKitchen,
+  Immobileitems.Garden,
+  Immobileitems.Garage,
+  Immobileitems.PrivatePool,
+  Immobileitems.GasShower,
+];
 
-export const sectionItemCondominiumData = {
-  availableOnCondominium: ['Pool', 'Playground', 'Concierge', 'SportsCourt', 'Loundry'],
-};
+export const sectionItemCondominiumData = [
+  CondominiumItems.Pool,
+  CondominiumItems.Playground,
+  CondominiumItems.Concierge,
+  CondominiumItems.SportsCourt,
+  CondominiumItems.Laundry,
+];

@@ -2,7 +2,7 @@ import { SectionCarouselImmobile } from '../carousel-section-immobile/carousel-s
 import { SectionDescriptionImmobile } from '../description-immobile/section-immobile';
 import { Footer } from '../footer/footer';
 import { Menu } from '../menu/menu';
-import { SectionItems } from '../section-items-immobile.tsx/section-items-immobile';
+import { SectionItems } from '../section-items-immobile/section-items-immobile';
 
 export function PropertyDetails() {
   return (
@@ -11,7 +11,7 @@ export function PropertyDetails() {
       <SectionCarouselImmobile />
       <SectionDescriptionImmobile />
       <SectionItems title="O que esse lugar oferece" variant="Immobile" />
-      <SectionItems title="Disponível no condomínio" variant="condominium" />
+      <SectionItems title="Disponível no condomínio" variant="Condominium" />
       <Footer />
     </>
   );

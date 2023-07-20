@@ -19,8 +19,8 @@ interface SectionItemsProps {
 }
 
 export function SectionItems({ title, variant }: SectionItemsProps) {
-  let renderedItemsPresent: { data: ItemData }[] = [];
-  let renderedItemsNotPresent: { data: ItemData }[] = [];
+  let renderedItemsPresent: ItemData[] = [];
+  let renderedItemsNotPresent: ItemData[] = [];
 
   if (variant === 'Immobile') {
     renderedItemsPresent = renderedItemsPresentInProperty;
@@ -40,8 +40,8 @@ export function SectionItems({ title, variant }: SectionItemsProps) {
           {renderedItemsPresent.map((item, index) => (
             <ul key={index}>
               <li>
-                {item?.data?.icon && <FontAwesomeIcon icon={item?.data?.icon} color={colors.CTA} />}
-                <BodySecondary>{item?.data.title}</BodySecondary>
+                {item?.icon && <FontAwesomeIcon icon={item?.icon} color={colors.CTA} />}
+                <BodySecondary>{item?.title}</BodySecondary>
               </li>
             </ul>
           ))}
@@ -50,8 +50,8 @@ export function SectionItems({ title, variant }: SectionItemsProps) {
           {renderedItemsNotPresent.map((item, index) => (
             <ul key={index}>
               <li>
-                {item?.data?.icon && <FontAwesomeIcon icon={item?.data?.icon} color={colors.NeutralLight} />}
-                <BodySecondary type="scratched">{item?.data.title}</BodySecondary>
+                {item?.icon && <FontAwesomeIcon icon={item?.icon} color={colors.NeutralLight} />}
+                <BodySecondary type="scratched">{item?.title}</BodySecondary>
               </li>
             </ul>
           ))}
