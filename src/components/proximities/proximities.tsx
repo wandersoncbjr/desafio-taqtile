@@ -84,7 +84,7 @@ const proximitiesIconMapping: ProximitiesIconMapping = {
 
 export function Proximities() {
   return (
-    <section style={{ width: '60%', paddingInline: '60px' }}>
+    <section style={{ width: '60%' }}>
       <Divider />
       <Heading2>Proximidades</Heading2>
       {proximitiesData.proximities.map((proximity, index) => (
