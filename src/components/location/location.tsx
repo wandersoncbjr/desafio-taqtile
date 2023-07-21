@@ -29,7 +29,7 @@ const key = 'AIzaSyDFqcjwssTsHGkqm0V2cVmRCNUhfOhxr4I';
 const getGoogleMapsUrl = (locationData: LocationData, key: string) => {
   const { address } = locationData;
   const formattedStreet = address.street.replace(/ /g, '+');
-  return `https://www.google.com/maps/embed/v1/place?key=${key}=${address.city}+${formattedStreet}+${address.district},${address.state}&center=${address.latitude},${address.longitude}&zoom=10`;
+  return `https://www.google.com/maps/embed/v1/place?key=${key}&q=${address.city}+${formattedStreet}+${address.district},${address.state}&center=${address.latitude},${address.longitude}&zoom=10`;
 };
 
 export function Location() {
