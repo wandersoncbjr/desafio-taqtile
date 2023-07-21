@@ -1,4 +1,19 @@
-const locationData = {
+import React from 'react';
+
+interface Address {
+  district: string;
+  city: string;
+  longitude: number;
+  latitude: number;
+  state: string;
+  street: string;
+}
+
+interface LocationData {
+  address: Address;
+}
+
+const locationData: LocationData = {
   address: {
     district: 'Bonfim',
     city: 'Osasco',
@@ -9,17 +24,15 @@ const locationData = {
   },
 };
 
-const key = 'AIzaSyDFqcjwssTsHGkqm0V2cVmRCNUhfOhxr4I&q';
-const formattedStreet = locationData.address.street.replace(/ /g, '+');
+const key = 'AIzaSyDFqcjwssTsHGkqm0V2cVmRCNUhfOhxr4I';
+
+const getGoogleMapsUrl = (locationData: LocationData, key: string) => {
+  const { address } = locationData;
+  const formattedStreet = address.street.replace(/ /g, '+');
+  return `https://www.google.com/maps/embed/v1/place?key=${key}=${address.city}+${formattedStreet}+${address.district},${address.state}&center=${address.latitude},${address.longitude}&zoom=10`;
+};
 
 export function Location() {
-  return (
-    <iframe
-      width="100%"
-      height="100%"
-      style={{ border: '0' }}
-      src={`https://www.google.com/maps/embed/v1/place?key=${key}=${locationData.address.city}+${formattedStreet}+${locationData.address.district},${locationData.address.state}&center=${locationData.address.latitude},${locationData.address.longitude}&zoom=10`}
-      allowFullScreen
-    ></iframe>
-  );
+  const googleMapsUrl = getGoogleMapsUrl(locationData, key);
+  return <iframe width="100%" height="100%" style={{ border: '0' }} src={googleMapsUrl} allowFullScreen></iframe>;
 }
