@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { colors } from '../../typography/colors';
-import './items-card.css';
+import './form.css';
 import { constants } from '../../typography';
 import { Label } from '../typography/label/label';
 
