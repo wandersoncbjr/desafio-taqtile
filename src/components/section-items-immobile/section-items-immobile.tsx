@@ -5,22 +5,53 @@ import './section-items-immobile.css';
 import { colors } from '../../typography/colors';
 import { Divider } from '../cards/divider/divider';
 import { Separator } from '../separator/separator';
+import { condominiumIconMapping, immobileIconMapping } from './icons-mapped-immobile';
 import {
-  renderedItemsNotPresentInProperty,
-  renderedItemsPresentInProperty,
-  renderedItemsNotPresentInCondominium,
-  renderedItemsPresentInCondominium,
   ItemData,
+  getItemsNotPresent,
+  getItemsPresent,
+  possibleItemsInCondominium,
+  possibleItemsInProperty,
 } from './item-filter';
 
 interface SectionItemsProps {
   title: string;
   variant: 'Immobile' | 'Condominium';
+  sectionItemImmbolieData?: string[];
+  sectionItemCondominiumData?: string[];
 }
 
-export function SectionItems({ title, variant }: SectionItemsProps) {
+export function SectionItems({
+  title,
+  variant,
+  sectionItemImmbolieData,
+  sectionItemCondominiumData,
+}: SectionItemsProps) {
   let renderedItemsPresent: ItemData[] = [];
   let renderedItemsNotPresent: ItemData[] = [];
+
+  const renderedItemsNotPresentInProperty = getItemsNotPresent(
+    possibleItemsInProperty,
+    sectionItemImmbolieData,
+    immobileIconMapping,
+  );
+
+  const renderedItemsPresentInProperty = getItemsPresent(
+    possibleItemsInProperty,
+    sectionItemImmbolieData,
+    immobileIconMapping,
+  );
+
+  const renderedItemsNotPresentInCondominium = getItemsNotPresent(
+    possibleItemsInCondominium,
+    sectionItemCondominiumData,
+    condominiumIconMapping,
+  );
+  const renderedItemsPresentInCondominium = getItemsPresent(
+    possibleItemsInCondominium,
+    sectionItemCondominiumData,
+    condominiumIconMapping,
+  );
 
   if (variant === 'Immobile') {
     renderedItemsPresent = renderedItemsPresentInProperty;

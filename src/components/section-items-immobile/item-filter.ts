@@ -1,14 +1,7 @@
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-import {
-  immobileIconMapping,
-  sectionItemImmbolieData,
-  sectionItemCondominiumData,
-  condominiumIconMapping,
-  Immobileitems,
-  CondominiumItems,
-} from './icons-mapped-immobile';
+import { Immobileitems, CondominiumItems } from './icons-mapped-immobile';
 
-const possibleItemsInProperty = [
+export const possibleItemsInProperty = [
   Immobileitems.AmericanKitchen,
   Immobileitems.ServiceArea,
   Immobileitems.Garden,
@@ -20,7 +13,7 @@ const possibleItemsInProperty = [
   Immobileitems.BellSystem,
 ];
 
-const possibleItemsInCondominium = [
+export const possibleItemsInCondominium = [
   CondominiumItems.Pool,
   CondominiumItems.Concierge,
   CondominiumItems.Playground,
@@ -39,39 +32,16 @@ export interface ItemData {
 
 export function getItemsPresent(
   possibleItems: string[],
-  availableItems: string[],
+  availableItems: string[] | undefined,
   mappings: Record<string, ItemData>,
 ): ItemData[] {
-  return possibleItems.filter((item) => availableItems.includes(item)).map((item) => mappings[item]);
+  return possibleItems.filter((item) => availableItems?.includes(item)).map((item) => mappings[item]);
 }
 
 export function getItemsNotPresent(
   possibleItems: string[],
-  availableItems: string[],
+  availableItems: string[] | undefined,
   mappings: Record<string, ItemData>,
 ): ItemData[] {
-  return possibleItems.filter((item) => !availableItems.includes(item)).map((item) => mappings[item]);
+  return possibleItems.filter((item) => !availableItems?.includes(item)).map((item) => mappings[item]);
 }
-
-export const renderedItemsNotPresentInProperty = getItemsNotPresent(
-  possibleItemsInProperty,
-  sectionItemImmbolieData,
-  immobileIconMapping,
-);
-
-export const renderedItemsPresentInProperty = getItemsPresent(
-  possibleItemsInProperty,
-  sectionItemImmbolieData,
-  immobileIconMapping,
-);
-
-export const renderedItemsNotPresentInCondominium = getItemsNotPresent(
-  possibleItemsInCondominium,
-  sectionItemCondominiumData,
-  condominiumIconMapping,
-);
-export const renderedItemsPresentInCondominium = getItemsPresent(
-  possibleItemsInCondominium,
-  sectionItemCondominiumData,
-  condominiumIconMapping,
-);
