@@ -14,6 +14,7 @@ import {
   faLeaf,
   faUtensils,
 } from '@fortawesome/free-solid-svg-icons';
+import { Proximity } from '../../graphql/queries/property-details';
 
 enum ProximitiesType {
   WellRatedRestaurants = 'WellRatedRestaurants',
@@ -24,36 +25,9 @@ enum ProximitiesType {
   Markets = 'Markets',
 }
 
-const proximitiesData = {
-  proximities: [
-    {
-      type: ProximitiesType.WellRatedRestaurants,
-      description: 'Cabanã Osasco, Salva Burguer, Jin Chef e O Bom do Baião.',
-    },
-    {
-      type: ProximitiesType.GreenAreas,
-      description: '2° Floresta Urbana de Osasco, Parque Chico Mendes e Praça Laurindo de Camargo.',
-    },
-    {
-      type: ProximitiesType.Schools,
-      description: 'E.E. Profº Francisco Casabona, ETEC Professor André Bogasian e Colégio Padre Anchieta.',
-    },
-    {
-      type: ProximitiesType.Colleges,
-      description: 'Universidade Estácio - Polo Osasco, Universidade Anhembi Morumbi e FNJ - Faculdade Nove de Julho.',
-    },
-    {
-      type: ProximitiesType.Hospitals,
-      description: 'Hospital Nossa Senhora de Fátima e Hospital Geral de Carapicuíba..',
-    },
-    {
-      type: ProximitiesType.Markets,
-      description: 'Atacadão, Mercado Moretti Bittencourt e Mercado Municipal de Osasco.',
-    },
-  ],
+type ProximitiesIconMapping = {
+  [key in string]: { icon: IconDefinition; title: string };
 };
-
-type ProximitiesIconMapping = Record<ProximitiesType, { icon: IconDefinition; title: string }>;
 
 const proximitiesIconMapping: ProximitiesIconMapping = {
   [ProximitiesType.WellRatedRestaurants]: {
@@ -82,12 +56,16 @@ const proximitiesIconMapping: ProximitiesIconMapping = {
   },
 };
 
-export function Proximities() {
+interface ProximitiesDataProps {
+  proximities: Proximity[];
+}
+
+export function Proximities({ proximities }: ProximitiesDataProps) {
   return (
     <section style={{ width: '60%' }}>
       <Divider />
       <Heading2>Proximidades</Heading2>
-      {proximitiesData.proximities.map((proximity, index) => (
+      {proximities.map((proximity, index) => (
         <div key={index} className="container-icon-description-title">
           <div>
             <FontAwesomeIcon icon={proximitiesIconMapping[proximity.type].icon} color={colors.NeutralDark} />
