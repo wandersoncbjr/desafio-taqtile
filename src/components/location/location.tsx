@@ -1,28 +1,9 @@
 import React from 'react';
-
-interface Address {
-  district: string;
-  city: string;
-  longitude: number;
-  latitude: number;
-  state: string;
-  street: string;
-}
+import { Address } from '../../graphql/queries/property-details';
 
 interface LocationData {
   address: Address;
 }
-
-const locationData: LocationData = {
-  address: {
-    district: 'Bonfim',
-    city: 'Osasco',
-    longitude: -46.78864601596307,
-    latitude: -23.521839344387367,
-    state: 'SP',
-    street: 'Avenida das Nações Unidas',
-  },
-};
 
 const key = 'AIzaSyDFqcjwssTsHGkqm0V2cVmRCNUhfOhxr4I';
 
@@ -32,7 +13,7 @@ const getGoogleMapsUrl = (locationData: LocationData, key: string) => {
   return `https://www.google.com/maps/embed/v1/place?key=${key}&q=${address.city}+${formattedStreet}+${address.district},${address.state}&center=${address.latitude},${address.longitude}&zoom=10`;
 };
 
-export function Location() {
-  const googleMapsUrl = getGoogleMapsUrl(locationData, key);
+export function Location(Address: LocationData) {
+  const googleMapsUrl = getGoogleMapsUrl(Address, key);
   return <iframe width="100%" height="100%" style={{ border: '0' }} src={googleMapsUrl} allowFullScreen></iframe>;
 }
