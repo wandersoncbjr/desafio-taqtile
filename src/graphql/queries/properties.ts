@@ -17,7 +17,6 @@ export const GET_PROPERTIES = gql`
         total
       }
       id
-      }
     }
   }
 `;

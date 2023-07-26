@@ -25,9 +25,9 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
       {type === 'category' ? (
         categoriesResult.data?.categories && (
           <Carrousel>
-            {categoriesResult.data.categories.map((category: Category) => (
+            {categoriesResult.data.categories.map((category: Category, index) => (
               <CardCategory
-                key={category.name}
+                key={index}
                 title={category.name}
                 image={category.imageUrl}
                 numberOfProperties={category.numberOfProperties}
@@ -42,10 +42,14 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
           {recentPropertiesResult.data?.recentProperties && (
             <Carrousel>
               {recentPropertiesResult.data.recentProperties.map((property: Property) => (
-                <Link to={`/detalhes-do-imovel/${property.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                <Link
+                  to={`/detalhes-do-imovel/${property.id}`}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
+                  key={property.address.city}
+                >
                   <CardProperties
                     img={property.imageUrls[0]}
-                    key={property.address.city}
+                    key={property.id}
                     description={`${property.address.district}, ${property.address.streetNumber}, ${property.address.state}`}
                     price={property.buyPrices.total}
                     title={`${property.address.city}, ${property.address.state}`}
