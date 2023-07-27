@@ -45,7 +45,7 @@ export function Login() {
             type="text"
             label="Email"
             value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            change={setEmail}
           />
 
           <Separator size="small" />
@@ -56,7 +56,7 @@ export function Login() {
             type="password"
             label="Senha"
             value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            change={setPassword}
           />
 
           <Separator size="large" />

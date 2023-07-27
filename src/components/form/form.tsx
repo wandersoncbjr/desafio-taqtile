@@ -10,21 +10,15 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   caption?: string;
   icon?: React.ReactNode;
   iconError?: React.ReactNode;
+  change?: React.Dispatch<React.SetStateAction<string>>;
 }
 
-export function Input({ error, label, icon, iconError, caption, ...rest }: InputProps) {
+export function Input({ error, label, icon, iconError, caption, change, ...rest }: InputProps) {
   const [focused, setFocused] = useState(false);
-  const [inputValue, setInputValue] = useState('');
-
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value);
-  };
-
   const inputStyle = {
     borderRadius: '8px',
     border: '',
   };
-
   const inputForm = {
     fontFamily: constants.font.family.primary,
     fontSize: constants.font.size.large,
@@ -38,7 +32,7 @@ export function Input({ error, label, icon, iconError, caption, ...rest }: Input
     inputStyle.border = '2px solid';
   } else if (error) {
     inputStyle.border = `1px solid ${colors.FeedbackError}`;
-  } else if (inputValue === '') {
+  } else if (rest.value === '') {
     inputStyle.border = `1px solid ${colors.NeutralLight}`;
   } else {
     inputStyle.border = '1px solid';
@@ -52,7 +46,7 @@ export function Input({ error, label, icon, iconError, caption, ...rest }: Input
           <div>
             <input
               className="input-form"
-              onChange={handleInputChange}
+              onChange={change ? (e) => change(e.target.value) : undefined}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
               style={inputForm}
