@@ -122,19 +122,3 @@ export const condominiumIconMapping: IconMappings = {
     title: 'Estacionamento',
   },
 };
-
-export const sectionItemImmbolieData = [
-  Immobileitems.AmericanKitchen,
-  Immobileitems.Garden,
-  Immobileitems.Garage,
-  Immobileitems.PrivatePool,
-  Immobileitems.GasShower,
-];
-
-export const sectionItemCondominiumData = [
-  CondominiumItems.Pool,
-  CondominiumItems.Playground,
-  CondominiumItems.Concierge,
-  CondominiumItems.SportsCourt,
-  CondominiumItems.Laundry,
-];

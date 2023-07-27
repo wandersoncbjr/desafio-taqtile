@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <WhoWeAre />,
   },
   {
-    path: '/detalhes-do-imovel',
+    path: '/detalhes-do-imovel/:id',
     element: <PropertyDetails />,
   },
 ]);

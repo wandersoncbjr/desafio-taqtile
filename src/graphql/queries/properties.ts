@@ -16,11 +16,12 @@ export const GET_PROPERTIES = gql`
       buyPrices {
         total
       }
+      id
     }
   }
 `;
 
-export interface Address {
+interface Address {
   city: string;
   state: string;
   district: string;
@@ -38,6 +39,7 @@ export interface Property {
   address: Address;
   imageUrls: string[];
   buyPrices: BuyPrices;
+  id: string;
 }
 
 export interface RecentPropertiesResponse {

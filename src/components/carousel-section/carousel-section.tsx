@@ -6,12 +6,16 @@ import { Carrousel } from '../carousel-properties/carousel';
 import { GET_CATEGORIES, categoriesResponse, Category } from '../../graphql/queries/categories';
 import { CardProperties } from '../cards/card-properties/card-properties';
 import { GET_PROPERTIES, RecentPropertiesResponse, Property } from '../../graphql/queries/properties';
+import { Link } from 'react-router-dom';
 
 interface CardCarouselSectionProps {
   title: string;
   type: 'category' | 'property';
 }
 
+const appRoutes = {
+  imovelDetails: '/detalhes-do-imovel',
+};
 export function CarouselSection({ title, type }: CardCarouselSectionProps) {
   const categoriesResult = useQuery<categoriesResponse>(GET_CATEGORIES);
   const recentPropertiesResult = useQuery<RecentPropertiesResponse>(GET_PROPERTIES);
@@ -21,13 +25,12 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
       <Heading2>{title}</Heading2>
       {categoriesResult.loading && 'Loading...'}
       {categoriesResult.error && `Error: ${categoriesResult.error.message}`}
-
       {type === 'category' ? (
         categoriesResult.data?.categories && (
           <Carrousel>
-            {categoriesResult.data.categories.map((category: Category) => (
+            {categoriesResult.data.categories.map((category: Category, index) => (
               <CardCategory
-                key={category.name}
+                key={index}
                 title={category.name}
                 image={category.imageUrl}
                 numberOfProperties={category.numberOfProperties}
@@ -42,18 +45,24 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
           {recentPropertiesResult.data?.recentProperties && (
             <Carrousel>
               {recentPropertiesResult.data.recentProperties.map((property: Property) => (
-                <CardProperties
-                  img={property.imageUrls[0]}
+                <Link
+                  to={`${appRoutes.imovelDetails}/${property.id}`}
+                  style={{ textDecoration: 'none', color: 'inherit' }}
                   key={property.address.city}
-                  description={`${property.address.district}, ${property.address.streetNumber}, ${property.address.state}`}
-                  price={property.buyPrices.total}
-                  title={`${property.address.city}, ${property.address.state}`}
-                  data={[
-                    { property: 'bathroom', detail: `${property.bathrooms} banheiros` },
-                    { property: 'bedrooms', detail: `${property.bedrooms} quartos` },
-                    { property: 'square-meter', detail: property.area },
-                  ]}
-                />
+                >
+                  <CardProperties
+                    img={property.imageUrls[0]}
+                    key={property.id}
+                    description={`${property.address.district}, ${property.address.streetNumber}, ${property.address.state}`}
+                    price={property.buyPrices.total}
+                    title={`${property.address.city}, ${property.address.state}`}
+                    data={[
+                      { property: 'bathroom', detail: `${property.bathrooms} banheiros` },
+                      { property: 'bedrooms', detail: `${property.bedrooms} quartos` },
+                      { property: 'square-meter', detail: property.area },
+                    ]}
+                  />
+                </Link>
               ))}
             </Carrousel>
           )}
