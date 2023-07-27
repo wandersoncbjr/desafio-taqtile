@@ -19,7 +19,6 @@ export function ContainerForm({ children }: ContainerFormProps) {
         {children}
         <div
           style={{
-            zIndex: '0',
             display: 'flex',
             justifyContent: 'end',
             width: '100%',
