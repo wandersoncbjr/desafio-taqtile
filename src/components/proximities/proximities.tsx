@@ -25,9 +25,7 @@ enum ProximitiesType {
   Markets = 'Markets',
 }
 
-type ProximitiesIconMapping = {
-  [key in string]: { icon: IconDefinition; title: string };
-};
+type ProximitiesIconMapping = Record<string, { icon: IconDefinition; title: string }>;
 
 const proximitiesIconMapping: ProximitiesIconMapping = {
   [ProximitiesType.WellRatedRestaurants]: {
