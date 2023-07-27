@@ -13,7 +13,7 @@ const getGoogleMapsUrl = (locationData: LocationData, key: string) => {
   return `https://www.google.com/maps/embed/v1/place?key=${key}&q=${address.city}+${formattedStreet}+${address.district},${address.state}&center=${address.latitude},${address.longitude}&zoom=10`;
 };
 
-export function Location(Address: LocationData) {
-  const googleMapsUrl = getGoogleMapsUrl(Address, key);
+export function Location(address: LocationData) {
+  const googleMapsUrl = getGoogleMapsUrl(address, key);
   return <iframe width="100%" height="100%" style={{ border: '0' }} src={googleMapsUrl} allowFullScreen></iframe>;
 }
