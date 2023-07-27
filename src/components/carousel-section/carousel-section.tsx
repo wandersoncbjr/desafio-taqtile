@@ -13,6 +13,9 @@ interface CardCarouselSectionProps {
   type: 'category' | 'property';
 }
 
+const appRoutes = {
+  imovelDetails: '/detalhes-do-imovel',
+};
 export function CarouselSection({ title, type }: CardCarouselSectionProps) {
   const categoriesResult = useQuery<categoriesResponse>(GET_CATEGORIES);
   const recentPropertiesResult = useQuery<RecentPropertiesResponse>(GET_PROPERTIES);
@@ -43,7 +46,7 @@ export function CarouselSection({ title, type }: CardCarouselSectionProps) {
             <Carrousel>
               {recentPropertiesResult.data.recentProperties.map((property: Property) => (
                 <Link
-                  to={`/detalhes-do-imovel/${property.id}`}
+                  to={`${appRoutes.imovelDetails}/${property.id}`}
                   style={{ textDecoration: 'none', color: 'inherit' }}
                   key={property.address.city}
                 >
