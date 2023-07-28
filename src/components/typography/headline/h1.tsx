@@ -8,6 +8,7 @@ const h1Style = {
   fontSize: constants.font.size.xxxLarge,
   lineHeight: constants.font.lineHeight.medium,
   color: colors.PrimaryXDark,
+  margin: constants.font.size.medium,
 };
 
 export function Heading1({ children }: { children: ReactNode }) {

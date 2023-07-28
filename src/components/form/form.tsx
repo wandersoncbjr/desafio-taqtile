@@ -18,6 +18,7 @@ export function Input({ error, label, icon, iconError, caption, change, ...rest 
   const inputStyle = {
     borderRadius: '8px',
     border: '',
+    backgroundColor: colors.Neutral,
   };
   const inputForm = {
     fontFamily: constants.font.family.primary,
@@ -39,7 +40,7 @@ export function Input({ error, label, icon, iconError, caption, change, ...rest 
   }
 
   return (
-    <div className="container">
+    <div>
       <div style={inputStyle} className="style-input">
         <div className="style-label">
           <Label>{label}</Label>
